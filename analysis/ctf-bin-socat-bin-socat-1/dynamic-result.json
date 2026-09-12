@@ -1,0 +1,15 @@
+{
+  "binary": [
+    {
+      "exit_code": 0,
+      "file": "nc-9001.txt",
+      "port": 9001,
+      "stderr": "Connection to 51.158.179.106 9001 port [tcp/*] succeeded!\n",
+      "stdout_bytes": 30
+    }
+  ],
+  "enabled": true,
+  "errors": [],
+  "ip": "51.158.179.106",
+  "web": []
+}
