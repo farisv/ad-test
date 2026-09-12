@@ -1,2 +1,0 @@
-PID                 PPID                USER                STARTED             COMMAND
-12439               12414               ubuntu              Sat                 Sep 12 21:49:06 2026 node server.js

@@ -1,6 +1,0 @@
-{
-  "container_id": "970fd263a68cd3487f01ec0cee88047062de30746462e36d79daa52143a8b030",
-  "container_name": "attack-defense-lab-web-node-1",
-  "source_directory": "/root/code/ctf-sim",
-  "source_kind": "complete compose project directory"
-}
