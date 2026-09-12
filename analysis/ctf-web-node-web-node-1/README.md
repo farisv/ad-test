@@ -1,3 +1,5 @@
+Note: Dumb quick analysis with naive deterministic checking. Only for situational awareness.
+
 # ctf-web-node-web-node-1
 
 This report combines static inspection and dynamic observations. Pattern names are neutral review cues, not conclusions.
@@ -29,14 +31,6 @@ These locations matched review-oriented source patterns. Inspect the surrounding
 | Recursive object merge | `source/server.js:62` | `function merge(target, source) { for (const key in source) { if (source[key] && typeof source[key] === 'object') { if (!target[key]) { target[key] = {}; } merge(target[key], source[key]); } else { target[key] = source[key];` |
 | Authorization decision | `source/server.js:199` | `if (!user.profile.isAdmin) {` |
 | Dynamic code evaluation | `source/server.js:213` | `exec(` |
-
-## Cross-file relationships to trace
-
-Compared definitions, references, and patterns across 4 source file(s). These links identify code paths worth following; they do not assert runtime data flow.
-
-No review-pattern relationship crossed a file boundary.
-
-No defined symbol was referenced from another inspected file.
 
 ## Routes and entry points
 
