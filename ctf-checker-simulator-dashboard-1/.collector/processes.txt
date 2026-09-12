@@ -1,2 +1,0 @@
-PID                 PPID                USER                STARTED             COMMAND
-5522                5273                nobody              Sat                 Sep 12 21:47:23 2026 python app.py
