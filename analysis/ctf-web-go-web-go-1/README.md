@@ -11,6 +11,7 @@ This report combines static inspection and dynamic observations. Pattern names a
 | Container | ctf-web-go-web-go-1 (`72085d0c97f1`) |
 | Image | `ctf-web-go-web-go` |
 | Classification | web |
+| Classification signals | Web technology: Go net/http, 8 static web route(s) recognized |
 | Languages | Go (2) |
 | Ports | 0.0.0.0:8082 → 8082/tcp, :::8082 → 8082/tcp |
 | Files inspected | 5 |
