@@ -1,3 +1,5 @@
+Note: Dumb quick analysis with naive deterministic checking. Only for situational awareness.
+
 # ctf-checker-checker-1
 
 This report combines static inspection and dynamic observations. Pattern names are neutral review cues, not conclusions.
@@ -28,14 +30,6 @@ These locations matched review-oriented source patterns. Inspect the surrounding
 | Authorization decision | `source/checker.py:66` | `assert replies[0] == 'OK authenticated'` |
 | File write | `source/checker.py:78` | `with open(temporary, 'w', encoding='utf-8') as output:` |
 | File write | `source/checker.py:102` | `with open(STATE, 'a', encoding='utf-8') as out:` |
-
-## Cross-file relationships to trace
-
-Compared definitions, references, and patterns across 4 source file(s). These links identify code paths worth following; they do not assert runtime data flow.
-
-No review-pattern relationship crossed a file boundary.
-
-No defined symbol was referenced from another inspected file.
 
 ## Routes and entry points
 
