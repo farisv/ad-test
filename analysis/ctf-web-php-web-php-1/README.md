@@ -10,7 +10,8 @@ This report combines static inspection and dynamic observations. Pattern names a
 |---|---|
 | Container | ctf-web-php-web-php-1 (`13f5eac72faf`) |
 | Image | `ctf-web-php-web-php` |
-| Classification | binary/network service |
+| Classification | web |
+| Classification signals | Web technology: PHP built-in web server, 6 static web route(s) recognized |
 | Languages | PHP (2), HTML/templates (1) |
 | Ports | 0.0.0.0:8081 → 8081/tcp, :::8081 → 8081/tcp |
 | Files inspected | 5 |
@@ -57,7 +58,12 @@ These locations matched review-oriented source patterns. Inspect the surrounding
 
 ## Routes and entry points
 
-No route was recognized by the static patterns.
+- `ANY /health — PHP manual router, source/router.php:73`
+- `GET / — PHP manual router, source/router.php:67`
+- `GET /api/export — PHP manual router, source/router.php:154`
+- `POST /api/items — PHP manual router, source/router.php:122`
+- `POST /api/login — PHP manual router, source/router.php:98`
+- `POST /api/register — PHP manual router, source/router.php:77`
 
 ## Package and build context
 
@@ -84,11 +90,20 @@ Configuration details to review:
 - Target IP: `51.158.179.106`
 - Timeout per operation: 15 seconds
 
-### Network transcripts
+### Web endpoint on TCP 8081
 
-| Port | Exit | Received bytes | Transcript |
-|---:|---:|---:|---|
-| 8081 | 0 | 0 | [nc-8081.txt](nc-8081.txt) |
+Start URL: `http://51.158.179.106:8081/`
+
+| Status | URL | Type | Bytes | Saved response |
+|---:|---|---|---:|---|
+| 200 | `http://51.158.179.106:8081/` | text/html | 419 | [responses/0001-root-f3295fba17.html](web-8081/responses/0001-root-f3295fba17.html) |
+
+Captured screenshots:
+
+`http://51.158.179.106:8081/`
+
+![Screenshot of http://51.158.179.106:8081/](web-8081/screenshots/0001-root-f3295fba17.png)
+
 
 ## Inspected source files
 
