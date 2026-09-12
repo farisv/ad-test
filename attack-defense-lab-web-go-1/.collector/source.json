@@ -1,6 +1,0 @@
-{
-  "container_id": "5046a4fcd6447bfe202ddf372a7bf8356c7507be3254143bfc46a8908a4413c2",
-  "container_name": "attack-defense-lab-web-go-1",
-  "source_directory": "/root/code/ctf-sim",
-  "source_kind": "complete compose project directory"
-}
