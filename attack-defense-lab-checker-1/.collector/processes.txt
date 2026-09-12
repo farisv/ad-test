@@ -1,2 +1,0 @@
-PID                 PPID                USER                STARTED             COMMAND
-12625               12599               nobody              Sat                 Sep 12 21:49:07 2026 python checker.py
