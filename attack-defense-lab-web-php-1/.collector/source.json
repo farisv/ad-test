@@ -1,6 +1,0 @@
-{
-  "container_id": "378e5714e8f93c0a0c9a74ebf81ae06720e796dd8cbf2ffa439396b88f3609cd",
-  "container_name": "attack-defense-lab-web-php-1",
-  "source_directory": "/root/code/ctf-sim",
-  "source_kind": "complete compose project directory"
-}
