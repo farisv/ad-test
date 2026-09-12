@@ -1,3 +1,5 @@
+Note: Dumb quick analysis with naive deterministic checking. Only for situational awareness.
+
 # ctf-web-java-web-java-1
 
 This report combines static inspection and dynamic observations. Pattern names are neutral review cues, not conclusions.
@@ -33,24 +35,6 @@ These locations matched review-oriented source patterns. Inspect the surrounding
 | File read | `source/App.java:337` | `"{\"content\":\"" + escape(Files.readString(file)) + "\"}"` |
 | File write | `source/App.java:417` | `Files.writeString(welcome, "Receipt Room export service\n");` |
 | Authorization decision | `source/CHALLENGE.md:4` | `Review object authorization, token trust, and path resolution. Existing user tokens do not` |
-
-## Cross-file relationships to trace
-
-Compared definitions, references, and patterns across 4 source file(s). These links identify code paths worth following; they do not assert runtime data flow.
-
-### Pattern relationships
-
-| Relationship | Files | Locations |
-|---|---:|---|
-| Authorization decision appears in 2 files | 2 | source/App.java:116; source/App.java:118; source/App.java:120; source/App.java:124; source/App.java:313; source/CHALLENGE.md:4 |
-| Identity decisions and stored-object operations appear in separate files | 2 | Authorization decision: source/App.java:116; Authorization decision: source/App.java:118; Authorization decision: source/App.java:120; Authorization decision: source/App.java:124; Authorization decision: source/App.java:313; Authorization decision: source/CHALLENGE.md:4; File read: source/App.java:206; File read: source/App.java:217; File read: source/App.java:337; File write: source/App.java:195; File write: source/App.java:196; File write: source/App.java:417 |
-
-### Symbol relationships
-
-| Symbol | Defined at | Referenced from other files | Files |
-|---|---|---|---:|
-| `download` | `source/App.java:323` | `source/CHALLENGE.md:3` | 2 |
-| `token` | `source/App.java:105` | `source/CHALLENGE.md:4` | 2 |
 
 ## Routes and entry points
 
