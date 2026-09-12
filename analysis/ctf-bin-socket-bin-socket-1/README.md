@@ -1,3 +1,5 @@
+Note: Dumb quick analysis with naive deterministic checking. Only for situational awareness.
+
 # ctf-bin-socket-bin-socket-1
 
 This report combines static inspection and dynamic observations. Pattern names are neutral review cues, not conclusions.
@@ -20,14 +22,6 @@ This report combines static inspection and dynamic observations. Pattern names a
 These locations matched review-oriented source patterns. Inspect the surrounding code and runtime behavior before drawing conclusions.
 
 No configured source pattern matched.
-
-## Cross-file relationships to trace
-
-Compared definitions, references, and patterns across 3 source file(s). These links identify code paths worth following; they do not assert runtime data flow.
-
-No review-pattern relationship crossed a file boundary.
-
-No defined symbol was referenced from another inspected file.
 
 ## Routes and entry points
 
