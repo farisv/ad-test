@@ -1,0 +1,39 @@
+{
+  "binary": [],
+  "enabled": true,
+  "errors": [],
+  "ip": "51.158.179.106",
+  "web": [
+    {
+      "max_depth": 10,
+      "max_pages": 500,
+      "page_limit_reached": false,
+      "pages": [
+        {
+          "body_file": "responses/0001-root-003974de34.body",
+          "content_type": "text/plain",
+          "depth": 0,
+          "error": "",
+          "headers": {
+            "Connection": "close",
+            "Date": "Sat, 12 Sep 2026 22:57:01 GMT",
+            "Transfer-Encoding": "chunked",
+            "content-type": "text/plain"
+          },
+          "reason": "OK",
+          "screenshot": "screenshots/0001-root-003974de34.png",
+          "screenshot_error": "",
+          "sha256": "db71031dd9b188cb288def73693d6e219da88dcd82817277d366833ae9b40158",
+          "size": 70,
+          "status": 200,
+          "truncated": false,
+          "url": "http://51.158.179.106:8083/"
+        }
+      ],
+      "port": 8083,
+      "queued_urls": 1,
+      "screenshots_taken": 1,
+      "start_url": "http://51.158.179.106:8083/"
+    }
+  ]
+}
