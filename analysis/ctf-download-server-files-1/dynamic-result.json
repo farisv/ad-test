@@ -1,0 +1,81 @@
+{
+  "binary": [],
+  "enabled": true,
+  "errors": [],
+  "ip": "51.158.179.106",
+  "web": [
+    {
+      "max_depth": 10,
+      "max_pages": 500,
+      "page_limit_reached": false,
+      "pages": [
+        {
+          "body_file": "responses/0001-root-c5c8ef0ff8.html",
+          "content_type": "text/html",
+          "depth": 0,
+          "error": "",
+          "headers": {
+            "Content-Length": "325",
+            "Content-type": "text/html; charset=utf-8",
+            "Date": "Sat, 12 Sep 2026 22:57:01 GMT",
+            "Server": "SimpleHTTP/0.6 Python/3.13.15"
+          },
+          "reason": "OK",
+          "screenshot": "screenshots/0001-root-c5c8ef0ff8.png",
+          "screenshot_error": "",
+          "sha256": "5519c112b6f88b2a2c94e63d65833f8751d95a46b1ac44e3021a15a1bf1a03f9",
+          "size": 325,
+          "status": 200,
+          "truncated": false,
+          "url": "http://51.158.179.106:8090/"
+        },
+        {
+          "body_file": "responses/0002-ctf-checker-simulator.zip-e36e64140c.body",
+          "content_type": "application/zip",
+          "depth": 1,
+          "error": "",
+          "headers": {
+            "Content-Length": "10543",
+            "Content-type": "application/zip",
+            "Date": "Sat, 12 Sep 2026 22:57:02 GMT",
+            "Last-Modified": "Sat, 12 Sep 2026 16:39:41 GMT",
+            "Server": "SimpleHTTP/0.6 Python/3.13.15"
+          },
+          "reason": "OK",
+          "screenshot": "",
+          "screenshot_error": "chromium timeout",
+          "sha256": "c466b113ed97192ba3c7aace4de6685b485c654761d8735dfb687850edf28617",
+          "size": 10543,
+          "status": 200,
+          "truncated": false,
+          "url": "http://51.158.179.106:8090/ctf-checker-simulator.zip"
+        },
+        {
+          "body_file": "responses/0003-ctf-service-kit.zip-4151eaae29.body",
+          "content_type": "application/zip",
+          "depth": 1,
+          "error": "",
+          "headers": {
+            "Content-Length": "41011",
+            "Content-type": "application/zip",
+            "Date": "Sat, 12 Sep 2026 22:57:33 GMT",
+            "Last-Modified": "Sat, 12 Sep 2026 18:19:41 GMT",
+            "Server": "SimpleHTTP/0.6 Python/3.13.15"
+          },
+          "reason": "OK",
+          "screenshot": "",
+          "screenshot_error": "chromium timeout",
+          "sha256": "99b1750d15964a82fa09f5d3c216ccaeaaed7a98bc0765be9118bc87f2933499",
+          "size": 41011,
+          "status": 200,
+          "truncated": false,
+          "url": "http://51.158.179.106:8090/ctf-service-kit.zip"
+        }
+      ],
+      "port": 8090,
+      "queued_urls": 3,
+      "screenshots_taken": 3,
+      "start_url": "http://51.158.179.106:8090/"
+    }
+  ]
+}
