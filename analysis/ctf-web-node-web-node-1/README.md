@@ -11,6 +11,7 @@ This report combines static inspection and dynamic observations. Pattern names a
 | Container | ctf-web-node-web-node-1 (`cdaca3107df8`) |
 | Image | `ctf-web-node-web-node` |
 | Classification | web |
+| Classification signals | Web technology: Node.js HTTP server, 8 static web route(s) recognized |
 | Languages | JavaScript (2) |
 | Ports | 0.0.0.0:8083 → 8083/tcp, :::8083 → 8083/tcp |
 | Files inspected | 4 |
