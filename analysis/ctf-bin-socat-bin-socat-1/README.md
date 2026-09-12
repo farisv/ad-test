@@ -11,6 +11,7 @@ This report combines static inspection and dynamic observations. Pattern names a
 | Container | ctf-bin-socat-bin-socat-1 (`daf6ca81de37`) |
 | Image | `ctf-bin-socat-bin-socat` |
 | Classification | binary/network service |
+| Classification signals | No static web-specific signal |
 | Languages | native C/C++/other (1) |
 | Ports | 0.0.0.0:9001 → 9001/tcp, :::9001 → 9001/tcp |
 | Files inspected | 4 |
@@ -59,6 +60,11 @@ Configuration details to review:
 | Port | Exit | Received bytes | Transcript |
 |---:|---:|---:|---|
 | 9001 | 0 | 30 | [nc-9001.txt](nc-9001.txt) |
+
+### Probe notes
+
+- http://51.158.179.106:9001/: PATCH-TUESDAY Parcel Relay v1 
+- https://51.158.179.106:9001/: <urlopen error [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:992)>
 
 ## Inspected source files
 

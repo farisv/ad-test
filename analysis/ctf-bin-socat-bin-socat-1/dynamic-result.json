@@ -9,7 +9,10 @@
     }
   ],
   "enabled": true,
-  "errors": [],
+  "errors": [
+    "http://51.158.179.106:9001/: PATCH-TUESDAY Parcel Relay v1\n",
+    "https://51.158.179.106:9001/: <urlopen error [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:992)>"
+  ],
   "ip": "51.158.179.106",
   "web": []
 }
