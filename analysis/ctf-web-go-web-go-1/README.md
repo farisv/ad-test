@@ -1,3 +1,5 @@
+Note: Dumb quick analysis with naive deterministic checking. Only for situational awareness.
+
 # ctf-web-go-web-go-1
 
 This report combines static inspection and dynamic observations. Pattern names are neutral review cues, not conclusions.
@@ -25,23 +27,6 @@ These locations matched review-oriented source patterns. Inspect the surrounding
 | File write | `source/main.go:49` | `_ = os.WriteFile("/data/ciphernotes.json", raw, 0600)` |
 | File read | `source/main.go:53` | `raw, e := os.ReadFile("/data/ciphernotes.json")` |
 | Authorization decision | `source/main.go:89` | `t := strings.TrimPrefix(r.Header.Get("Authorization"), "Bearer ")` |
-
-## Cross-file relationships to trace
-
-Compared definitions, references, and patterns across 5 source file(s). These links identify code paths worth following; they do not assert runtime data flow.
-
-### Pattern relationships
-
-| Relationship | Files | Locations |
-|---|---:|---|
-| Authorization decision appears in 2 files | 2 | source/CHALLENGE.md:5; source/main.go:89 |
-| Identity decisions and stored-object operations appear in separate files | 2 | Authorization decision: source/CHALLENGE.md:5; Authorization decision: source/main.go:89; File read: source/main.go:53; File write: source/main.go:49 |
-
-### Symbol relationships
-
-| Symbol | Defined at | Referenced from other files | Files |
-|---|---|---|---:|
-| `backup` | `source/main.go:218` | `source/CHALLENGE.md:3; source/CHALLENGE.md:5` | 2 |
 
 ## Routes and entry points
 
