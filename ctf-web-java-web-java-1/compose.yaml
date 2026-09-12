@@ -1,0 +1,11 @@
+name: ctf-web-java
+services:
+  web-java:
+    build: .
+    ports:
+      - "8084:8084"
+    volumes:
+      - java-data:/data
+
+volumes:
+  java-data:

@@ -1,0 +1,14 @@
+name: ctf-checker
+services:
+  checker:
+    build: .
+    environment:
+      TARGET_HOST: ${TARGET_HOST:-host.docker.internal}
+      CHECK_INTERVAL: ${CHECK_INTERVAL:-60}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - checker-state:/state
+
+volumes:
+  checker-state:

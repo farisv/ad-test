@@ -1,0 +1,257 @@
+[
+  {
+    "AppArmorProfile": "docker-default",
+    "Args": [
+      "app.py"
+    ],
+    "Config": {
+      "AttachStderr": true,
+      "AttachStdin": false,
+      "AttachStdout": true,
+      "Cmd": [
+        "python",
+        "app.py"
+      ],
+      "Domainname": "",
+      "Entrypoint": null,
+      "Env": [
+        "WEB_PORT=8080",
+        "DB_PATH=/data/simulator.db",
+        "TARGET_HOST=51.158.179.106",
+        "CHECK_INTERVAL=60",
+        "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+        "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+        "PYTHON_VERSION=3.13.15",
+        "PYTHON_SHA256=1e66a7945a48390ee4c2a4268a0e4185884059a13c4aab6d148aa208deea4a76"
+      ],
+      "ExposedPorts": {
+        "8080/tcp": {}
+      },
+      "Hostname": "f97e5190eea0",
+      "Image": "ctf-checker-simulator-dashboard",
+      "Labels": {
+        "com.docker.compose.config-hash": "e9ea4cb48d63612608c776952d342c98bb18d0a0a5012d480d02c10fd5c5dd70",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.depends_on": "",
+        "com.docker.compose.image": "sha256:28845c188b2b0f34b164ee9510818b8933732cc5cb61bf064fe14af5e928dbea",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "ctf-checker-simulator",
+        "com.docker.compose.project.config_files": "/root/code/checker-simulator/compose.yaml",
+        "com.docker.compose.project.working_dir": "/root/code/checker-simulator",
+        "com.docker.compose.replace": "dashboard-1",
+        "com.docker.compose.service": "dashboard",
+        "com.docker.compose.version": "5.5.1"
+      },
+      "OpenStdin": false,
+      "StdinOnce": false,
+      "Tty": false,
+      "User": "65534:65534",
+      "Volumes": null,
+      "WorkingDir": "/app"
+    },
+    "Created": "2026-09-12T16:38:58.636283782Z",
+    "Driver": "overlayfs",
+    "ExecIDs": null,
+    "HostConfig": {
+      "AutoRemove": false,
+      "Binds": [
+        "ctf-checker-simulator_simulator-data:/data:rw"
+      ],
+      "BlkioDeviceReadBps": null,
+      "BlkioDeviceReadIOps": null,
+      "BlkioDeviceWriteBps": null,
+      "BlkioDeviceWriteIOps": null,
+      "BlkioWeight": 0,
+      "BlkioWeightDevice": null,
+      "CapAdd": null,
+      "CapDrop": [
+        "ALL"
+      ],
+      "Cgroup": "",
+      "CgroupParent": "",
+      "CgroupnsMode": "private",
+      "ConsoleSize": [
+        0,
+        0
+      ],
+      "ContainerIDFile": "",
+      "CpuCount": 0,
+      "CpuPercent": 0,
+      "CpuPeriod": 0,
+      "CpuQuota": 0,
+      "CpuRealtimePeriod": 0,
+      "CpuRealtimeRuntime": 0,
+      "CpuShares": 0,
+      "CpusetCpus": "",
+      "CpusetMems": "",
+      "DeviceCgroupRules": null,
+      "DeviceRequests": null,
+      "Devices": null,
+      "Dns": [],
+      "DnsOptions": [],
+      "DnsSearch": [],
+      "ExtraHosts": [],
+      "GroupAdd": null,
+      "IOMaximumBandwidth": 0,
+      "IOMaximumIOps": 0,
+      "IpcMode": "private",
+      "Isolation": "",
+      "Links": null,
+      "LogConfig": {
+        "Config": {},
+        "Type": "json-file"
+      },
+      "MaskedPaths": [
+        "/proc/acpi",
+        "/proc/asound",
+        "/proc/interrupts",
+        "/proc/kcore",
+        "/proc/keys",
+        "/proc/latency_stats",
+        "/proc/sched_debug",
+        "/proc/scsi",
+        "/proc/timer_list",
+        "/proc/timer_stats",
+        "/sys/devices/virtual/powercap",
+        "/sys/firmware"
+      ],
+      "Memory": 268435456,
+      "MemoryReservation": 0,
+      "MemorySwap": 536870912,
+      "MemorySwappiness": null,
+      "NanoCpus": 0,
+      "NetworkMode": "ctf-checker-simulator_default",
+      "OomKillDisable": null,
+      "OomScoreAdj": 0,
+      "PidMode": "",
+      "PidsLimit": 128,
+      "PortBindings": {
+        "8080/tcp": [
+          {
+            "HostIp": "",
+            "HostPort": "8080"
+          }
+        ]
+      },
+      "Privileged": false,
+      "PublishAllPorts": false,
+      "ReadonlyPaths": [
+        "/proc/bus",
+        "/proc/fs",
+        "/proc/irq",
+        "/proc/sys",
+        "/proc/sysrq-trigger"
+      ],
+      "ReadonlyRootfs": false,
+      "RestartPolicy": {
+        "MaximumRetryCount": 0,
+        "Name": "unless-stopped"
+      },
+      "Runtime": "runc",
+      "SecurityOpt": [
+        "no-new-privileges:true"
+      ],
+      "ShmSize": 67108864,
+      "UTSMode": "",
+      "Ulimits": null,
+      "UsernsMode": "",
+      "VolumeDriver": "",
+      "VolumesFrom": null
+    },
+    "HostnamePath": "/var/lib/docker/containers/f97e5190eea0ea46beb6813d57a5f4bc11696b26a96905d1104a4ca01b063dc8/hostname",
+    "HostsPath": "/var/lib/docker/containers/f97e5190eea0ea46beb6813d57a5f4bc11696b26a96905d1104a4ca01b063dc8/hosts",
+    "Id": "f97e5190eea0ea46beb6813d57a5f4bc11696b26a96905d1104a4ca01b063dc8",
+    "Image": "sha256:3feb273078707382fbce56d9ed9776b6063929cd2a425de5965b61e9d896eb9e",
+    "ImageManifestDescriptor": {
+      "digest": "sha256:28845c188b2b0f34b164ee9510818b8933732cc5cb61bf064fe14af5e928dbea",
+      "mediaType": "application/vnd.oci.image.manifest.v1+json",
+      "platform": {
+        "architecture": "amd64",
+        "os": "linux"
+      },
+      "size": 1805
+    },
+    "LogPath": "/var/lib/docker/containers/f97e5190eea0ea46beb6813d57a5f4bc11696b26a96905d1104a4ca01b063dc8/f97e5190eea0ea46beb6813d57a5f4bc11696b26a96905d1104a4ca01b063dc8-json.log",
+    "MountLabel": "",
+    "Mounts": [
+      {
+        "Destination": "/data",
+        "Driver": "local",
+        "Mode": "rw",
+        "Name": "ctf-checker-simulator_simulator-data",
+        "Propagation": "",
+        "RW": true,
+        "Source": "/var/lib/docker/volumes/ctf-checker-simulator_simulator-data/_data",
+        "Type": "volume"
+      }
+    ],
+    "Name": "/ctf-checker-simulator-dashboard-1",
+    "NetworkSettings": {
+      "Networks": {
+        "ctf-checker-simulator_default": {
+          "Aliases": [
+            "ctf-checker-simulator-dashboard-1",
+            "dashboard"
+          ],
+          "DNSNames": [
+            "ctf-checker-simulator-dashboard-1",
+            "dashboard",
+            "f97e5190eea0"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "7f656872d02c55183daef3349ec47a8c663f0abda73571ba449c901785bb8625",
+          "Gateway": "172.20.0.1",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "172.20.0.2",
+          "IPPrefixLen": 16,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "de:f9:5b:6f:99:0c",
+          "NetworkID": "18ff5ccd74ccbfaa4ff866815669af25a903c5399c4d4ee596e7bdd8062c026e"
+        }
+      },
+      "Ports": {
+        "8080/tcp": [
+          {
+            "HostIp": "0.0.0.0",
+            "HostPort": "8080"
+          },
+          {
+            "HostIp": "::",
+            "HostPort": "8080"
+          }
+        ]
+      },
+      "SandboxID": "6c748deda42a2c68d7d42f05362e7c711281a8b94acc4d2129c1eb3e1219c7e7",
+      "SandboxKey": "/var/run/docker/netns/6c748deda42a"
+    },
+    "Path": "python",
+    "Platform": "linux",
+    "ProcessLabel": "",
+    "ResolvConfPath": "/var/lib/docker/containers/f97e5190eea0ea46beb6813d57a5f4bc11696b26a96905d1104a4ca01b063dc8/resolv.conf",
+    "RestartCount": 0,
+    "State": {
+      "Dead": false,
+      "Error": "",
+      "ExitCode": 0,
+      "FinishedAt": "2026-09-12T21:39:45.945134914Z",
+      "OOMKilled": false,
+      "Paused": false,
+      "Pid": 5522,
+      "Restarting": false,
+      "Running": true,
+      "StartedAt": "2026-09-12T21:47:24.099392741Z",
+      "Status": "running"
+    },
+    "Storage": {
+      "RootFS": {
+        "Snapshot": {
+          "Name": "overlayfs"
+        }
+      }
+    }
+  }
+]

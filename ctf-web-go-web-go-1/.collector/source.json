@@ -1,0 +1,6 @@
+{
+  "container_id": "72085d0c97f19f64f95d4e03706cef65e7c8d22567a65024b5282930a2c17a4e",
+  "container_name": "ctf-web-go-web-go-1",
+  "source_directory": "/root/code/ctf-sim/web-go",
+  "source_kind": "complete compose project directory"
+}

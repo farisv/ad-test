@@ -1,0 +1,247 @@
+[
+  {
+    "AppArmorProfile": "docker-default",
+    "Args": [
+      "TCP-LISTEN:9001,reuseaddr,fork",
+      "EXEC:/app/service,stderr"
+    ],
+    "Config": {
+      "AttachStderr": true,
+      "AttachStdin": false,
+      "AttachStdout": true,
+      "Cmd": [
+        "socat",
+        "TCP-LISTEN:9001,reuseaddr,fork",
+        "EXEC:/app/service,stderr"
+      ],
+      "Domainname": "",
+      "Entrypoint": null,
+      "Env": [
+        "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      ],
+      "ExposedPorts": {
+        "9001/tcp": {}
+      },
+      "Hostname": "90ef8fdbada3",
+      "Image": "ctf-bin-socat-bin-socat",
+      "Labels": {
+        "com.docker.compose.config-hash": "ff53ee275be0b9e4fc8847b0352ac5219fc5289f41b77e10612e86328df7bd78",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.depends_on": "",
+        "com.docker.compose.image": "sha256:c769110d7ab802d6eb21bb6de37c36c1bf469b754db6d0b66be86e0e21861bef",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "ctf-bin-socat",
+        "com.docker.compose.project.config_files": "/root/code/ctf-sim/bin-socat/compose.yaml",
+        "com.docker.compose.project.working_dir": "/root/code/ctf-sim/bin-socat",
+        "com.docker.compose.service": "bin-socat",
+        "com.docker.compose.version": "5.5.1"
+      },
+      "OpenStdin": false,
+      "StdinOnce": false,
+      "Tty": false,
+      "User": "10001:10001",
+      "Volumes": null,
+      "WorkingDir": "/app"
+    },
+    "Created": "2026-09-12T22:36:14.829500748Z",
+    "Driver": "overlayfs",
+    "ExecIDs": null,
+    "HostConfig": {
+      "AutoRemove": false,
+      "Binds": [
+        "ctf-bin-socat_socat-data:/data:rw"
+      ],
+      "BlkioDeviceReadBps": null,
+      "BlkioDeviceReadIOps": null,
+      "BlkioDeviceWriteBps": null,
+      "BlkioDeviceWriteIOps": null,
+      "BlkioWeight": 0,
+      "BlkioWeightDevice": null,
+      "CapAdd": null,
+      "CapDrop": null,
+      "Cgroup": "",
+      "CgroupParent": "",
+      "CgroupnsMode": "private",
+      "ConsoleSize": [
+        0,
+        0
+      ],
+      "ContainerIDFile": "",
+      "CpuCount": 0,
+      "CpuPercent": 0,
+      "CpuPeriod": 0,
+      "CpuQuota": 0,
+      "CpuRealtimePeriod": 0,
+      "CpuRealtimeRuntime": 0,
+      "CpuShares": 0,
+      "CpusetCpus": "",
+      "CpusetMems": "",
+      "DeviceCgroupRules": null,
+      "DeviceRequests": null,
+      "Devices": null,
+      "Dns": null,
+      "DnsOptions": null,
+      "DnsSearch": null,
+      "ExtraHosts": [],
+      "GroupAdd": null,
+      "IOMaximumBandwidth": 0,
+      "IOMaximumIOps": 0,
+      "IpcMode": "private",
+      "Isolation": "",
+      "Links": null,
+      "LogConfig": {
+        "Config": {},
+        "Type": "json-file"
+      },
+      "MaskedPaths": [
+        "/proc/acpi",
+        "/proc/asound",
+        "/proc/interrupts",
+        "/proc/kcore",
+        "/proc/keys",
+        "/proc/latency_stats",
+        "/proc/sched_debug",
+        "/proc/scsi",
+        "/proc/timer_list",
+        "/proc/timer_stats",
+        "/sys/devices/virtual/powercap",
+        "/sys/firmware"
+      ],
+      "Memory": 0,
+      "MemoryReservation": 0,
+      "MemorySwap": 0,
+      "MemorySwappiness": null,
+      "NanoCpus": 0,
+      "NetworkMode": "ctf-bin-socat_default",
+      "OomKillDisable": null,
+      "OomScoreAdj": 0,
+      "PidMode": "",
+      "PidsLimit": null,
+      "PortBindings": {
+        "9001/tcp": [
+          {
+            "HostIp": "",
+            "HostPort": "9001"
+          }
+        ]
+      },
+      "Privileged": false,
+      "PublishAllPorts": false,
+      "ReadonlyPaths": [
+        "/proc/bus",
+        "/proc/fs",
+        "/proc/irq",
+        "/proc/sys",
+        "/proc/sysrq-trigger"
+      ],
+      "ReadonlyRootfs": false,
+      "RestartPolicy": {
+        "MaximumRetryCount": 0,
+        "Name": "no"
+      },
+      "Runtime": "runc",
+      "SecurityOpt": null,
+      "ShmSize": 67108864,
+      "UTSMode": "",
+      "Ulimits": null,
+      "UsernsMode": "",
+      "VolumeDriver": "",
+      "VolumesFrom": null
+    },
+    "HostnamePath": "/var/lib/docker/containers/90ef8fdbada3e4a4a76f7953e2abc6b68952a16d03b5fa216638fe93fc598ce1/hostname",
+    "HostsPath": "/var/lib/docker/containers/90ef8fdbada3e4a4a76f7953e2abc6b68952a16d03b5fa216638fe93fc598ce1/hosts",
+    "Id": "90ef8fdbada3e4a4a76f7953e2abc6b68952a16d03b5fa216638fe93fc598ce1",
+    "Image": "sha256:ffc129a491434fbd3ab0ef48cf90fa0cddc32aa762d2405776ad101237d674f5",
+    "ImageManifestDescriptor": {
+      "digest": "sha256:c769110d7ab802d6eb21bb6de37c36c1bf469b754db6d0b66be86e0e21861bef",
+      "mediaType": "application/vnd.oci.image.manifest.v1+json",
+      "platform": {
+        "architecture": "amd64",
+        "os": "linux"
+      },
+      "size": 1236
+    },
+    "LogPath": "/var/lib/docker/containers/90ef8fdbada3e4a4a76f7953e2abc6b68952a16d03b5fa216638fe93fc598ce1/90ef8fdbada3e4a4a76f7953e2abc6b68952a16d03b5fa216638fe93fc598ce1-json.log",
+    "MountLabel": "",
+    "Mounts": [
+      {
+        "Destination": "/data",
+        "Driver": "local",
+        "Mode": "rw",
+        "Name": "ctf-bin-socat_socat-data",
+        "Propagation": "",
+        "RW": true,
+        "Source": "/var/lib/docker/volumes/ctf-bin-socat_socat-data/_data",
+        "Type": "volume"
+      }
+    ],
+    "Name": "/ctf-bin-socat-bin-socat-1",
+    "NetworkSettings": {
+      "Networks": {
+        "ctf-bin-socat_default": {
+          "Aliases": [
+            "ctf-bin-socat-bin-socat-1",
+            "bin-socat"
+          ],
+          "DNSNames": [
+            "ctf-bin-socat-bin-socat-1",
+            "bin-socat",
+            "90ef8fdbada3"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "28bea3697a0dbc793ca1108e50c89723685070d6905b474d61f0228f7126774f",
+          "Gateway": "172.26.0.1",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "172.26.0.2",
+          "IPPrefixLen": 16,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "d6:a1:39:a3:a6:6b",
+          "NetworkID": "578edd00ecd00186e0ffe37029a2e91021f1b672ca4c8aa754eb360029c99a8f"
+        }
+      },
+      "Ports": {
+        "9001/tcp": [
+          {
+            "HostIp": "0.0.0.0",
+            "HostPort": "9001"
+          },
+          {
+            "HostIp": "::",
+            "HostPort": "9001"
+          }
+        ]
+      },
+      "SandboxID": "dcab714f537c3818bfc7b587ddd5d7f6ddf7fd2fe4b46481d0590d794a3cae2b",
+      "SandboxKey": "/var/run/docker/netns/dcab714f537c"
+    },
+    "Path": "socat",
+    "Platform": "linux",
+    "ProcessLabel": "",
+    "ResolvConfPath": "/var/lib/docker/containers/90ef8fdbada3e4a4a76f7953e2abc6b68952a16d03b5fa216638fe93fc598ce1/resolv.conf",
+    "RestartCount": 0,
+    "State": {
+      "Dead": false,
+      "Error": "",
+      "ExitCode": 0,
+      "FinishedAt": "0001-01-01T00:00:00Z",
+      "OOMKilled": false,
+      "Paused": false,
+      "Pid": 28449,
+      "Restarting": false,
+      "Running": true,
+      "StartedAt": "2026-09-12T22:36:14.964340941Z",
+      "Status": "running"
+    },
+    "Storage": {
+      "RootFS": {
+        "Snapshot": {
+          "Name": "overlayfs"
+        }
+      }
+    }
+  }
+]

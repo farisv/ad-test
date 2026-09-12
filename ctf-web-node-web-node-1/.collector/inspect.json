@@ -1,0 +1,250 @@
+[
+  {
+    "AppArmorProfile": "docker-default",
+    "Args": [
+      "node",
+      "server.js"
+    ],
+    "Config": {
+      "AttachStderr": true,
+      "AttachStdin": false,
+      "AttachStdout": true,
+      "Cmd": [
+        "node",
+        "server.js"
+      ],
+      "Domainname": "",
+      "Entrypoint": [
+        "docker-entrypoint.sh"
+      ],
+      "Env": [
+        "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+        "NODE_VERSION=24.21.0",
+        "YARN_VERSION=1.22.22"
+      ],
+      "ExposedPorts": {
+        "8083/tcp": {}
+      },
+      "Hostname": "cdaca3107df8",
+      "Image": "ctf-web-node-web-node",
+      "Labels": {
+        "com.docker.compose.config-hash": "292e0d994b8334dc5212be4d80ca61a5aaf585ac8b673226230285a3fbd06cd8",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.depends_on": "",
+        "com.docker.compose.image": "sha256:410f4f423e660eb847662bae570105a55dec4651f4e5e55d571ae5b34b900684",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "ctf-web-node",
+        "com.docker.compose.project.config_files": "/root/code/ctf-sim/web-node/compose.yaml",
+        "com.docker.compose.project.working_dir": "/root/code/ctf-sim/web-node",
+        "com.docker.compose.service": "web-node",
+        "com.docker.compose.version": "5.5.1"
+      },
+      "OpenStdin": false,
+      "StdinOnce": false,
+      "Tty": false,
+      "User": "node",
+      "Volumes": null,
+      "WorkingDir": "/app"
+    },
+    "Created": "2026-09-12T22:36:10.438795032Z",
+    "Driver": "overlayfs",
+    "ExecIDs": null,
+    "HostConfig": {
+      "AutoRemove": false,
+      "Binds": [
+        "ctf-web-node_node-data:/data:rw"
+      ],
+      "BlkioDeviceReadBps": null,
+      "BlkioDeviceReadIOps": null,
+      "BlkioDeviceWriteBps": null,
+      "BlkioDeviceWriteIOps": null,
+      "BlkioWeight": 0,
+      "BlkioWeightDevice": null,
+      "CapAdd": null,
+      "CapDrop": null,
+      "Cgroup": "",
+      "CgroupParent": "",
+      "CgroupnsMode": "private",
+      "ConsoleSize": [
+        0,
+        0
+      ],
+      "ContainerIDFile": "",
+      "CpuCount": 0,
+      "CpuPercent": 0,
+      "CpuPeriod": 0,
+      "CpuQuota": 0,
+      "CpuRealtimePeriod": 0,
+      "CpuRealtimeRuntime": 0,
+      "CpuShares": 0,
+      "CpusetCpus": "",
+      "CpusetMems": "",
+      "DeviceCgroupRules": null,
+      "DeviceRequests": null,
+      "Devices": null,
+      "Dns": null,
+      "DnsOptions": null,
+      "DnsSearch": null,
+      "ExtraHosts": [],
+      "GroupAdd": null,
+      "IOMaximumBandwidth": 0,
+      "IOMaximumIOps": 0,
+      "IpcMode": "private",
+      "Isolation": "",
+      "Links": null,
+      "LogConfig": {
+        "Config": {},
+        "Type": "json-file"
+      },
+      "MaskedPaths": [
+        "/proc/acpi",
+        "/proc/asound",
+        "/proc/interrupts",
+        "/proc/kcore",
+        "/proc/keys",
+        "/proc/latency_stats",
+        "/proc/sched_debug",
+        "/proc/scsi",
+        "/proc/timer_list",
+        "/proc/timer_stats",
+        "/sys/devices/virtual/powercap",
+        "/sys/firmware"
+      ],
+      "Memory": 0,
+      "MemoryReservation": 0,
+      "MemorySwap": 0,
+      "MemorySwappiness": null,
+      "NanoCpus": 0,
+      "NetworkMode": "ctf-web-node_default",
+      "OomKillDisable": null,
+      "OomScoreAdj": 0,
+      "PidMode": "",
+      "PidsLimit": null,
+      "PortBindings": {
+        "8083/tcp": [
+          {
+            "HostIp": "",
+            "HostPort": "8083"
+          }
+        ]
+      },
+      "Privileged": false,
+      "PublishAllPorts": false,
+      "ReadonlyPaths": [
+        "/proc/bus",
+        "/proc/fs",
+        "/proc/irq",
+        "/proc/sys",
+        "/proc/sysrq-trigger"
+      ],
+      "ReadonlyRootfs": false,
+      "RestartPolicy": {
+        "MaximumRetryCount": 0,
+        "Name": "no"
+      },
+      "Runtime": "runc",
+      "SecurityOpt": null,
+      "ShmSize": 67108864,
+      "UTSMode": "",
+      "Ulimits": null,
+      "UsernsMode": "",
+      "VolumeDriver": "",
+      "VolumesFrom": null
+    },
+    "HostnamePath": "/var/lib/docker/containers/cdaca3107df8e2725b0a21d013b8f1e1b00eaff480aa971894cb6bdfb672cff6/hostname",
+    "HostsPath": "/var/lib/docker/containers/cdaca3107df8e2725b0a21d013b8f1e1b00eaff480aa971894cb6bdfb672cff6/hosts",
+    "Id": "cdaca3107df8e2725b0a21d013b8f1e1b00eaff480aa971894cb6bdfb672cff6",
+    "Image": "sha256:5b4a21e128c91ba47aa03711e8e1a60123d5d8de29969c0954d27845f3890f46",
+    "ImageManifestDescriptor": {
+      "digest": "sha256:410f4f423e660eb847662bae570105a55dec4651f4e5e55d571ae5b34b900684",
+      "mediaType": "application/vnd.oci.image.manifest.v1+json",
+      "platform": {
+        "architecture": "amd64",
+        "os": "linux"
+      },
+      "size": 1617
+    },
+    "LogPath": "/var/lib/docker/containers/cdaca3107df8e2725b0a21d013b8f1e1b00eaff480aa971894cb6bdfb672cff6/cdaca3107df8e2725b0a21d013b8f1e1b00eaff480aa971894cb6bdfb672cff6-json.log",
+    "MountLabel": "",
+    "Mounts": [
+      {
+        "Destination": "/data",
+        "Driver": "local",
+        "Mode": "rw",
+        "Name": "ctf-web-node_node-data",
+        "Propagation": "",
+        "RW": true,
+        "Source": "/var/lib/docker/volumes/ctf-web-node_node-data/_data",
+        "Type": "volume"
+      }
+    ],
+    "Name": "/ctf-web-node-web-node-1",
+    "NetworkSettings": {
+      "Networks": {
+        "ctf-web-node_default": {
+          "Aliases": [
+            "ctf-web-node-web-node-1",
+            "web-node"
+          ],
+          "DNSNames": [
+            "ctf-web-node-web-node-1",
+            "web-node",
+            "cdaca3107df8"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "92c79c59e183a4ec3acc92f24a2aaa3446b9fb06bda253dadf19d9899858094b",
+          "Gateway": "172.24.0.1",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "172.24.0.2",
+          "IPPrefixLen": 16,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "4a:a2:73:a7:a7:df",
+          "NetworkID": "5fa0f4aa3ea464c1a0e2babd5045a8b0fc1d83a1c98d3333d66cd23a1a16734d"
+        }
+      },
+      "Ports": {
+        "8083/tcp": [
+          {
+            "HostIp": "0.0.0.0",
+            "HostPort": "8083"
+          },
+          {
+            "HostIp": "::",
+            "HostPort": "8083"
+          }
+        ]
+      },
+      "SandboxID": "ce8c27671eb1cda279a1660f5ec70b85f9b08336933dc5f9d65427e16e81ef0d",
+      "SandboxKey": "/var/run/docker/netns/ce8c27671eb1"
+    },
+    "Path": "docker-entrypoint.sh",
+    "Platform": "linux",
+    "ProcessLabel": "",
+    "ResolvConfPath": "/var/lib/docker/containers/cdaca3107df8e2725b0a21d013b8f1e1b00eaff480aa971894cb6bdfb672cff6/resolv.conf",
+    "RestartCount": 0,
+    "State": {
+      "Dead": false,
+      "Error": "",
+      "ExitCode": 0,
+      "FinishedAt": "0001-01-01T00:00:00Z",
+      "OOMKilled": false,
+      "Paused": false,
+      "Pid": 28062,
+      "Restarting": false,
+      "Running": true,
+      "StartedAt": "2026-09-12T22:36:10.589082987Z",
+      "Status": "running"
+    },
+    "Storage": {
+      "RootFS": {
+        "Snapshot": {
+          "Name": "overlayfs"
+        }
+      }
+    }
+  }
+]

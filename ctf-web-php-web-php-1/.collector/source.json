@@ -1,0 +1,6 @@
+{
+  "container_id": "13f5eac72fafc2863b9f052078c0b6e6f08c5ad5698de9e586a27cc08b67528f",
+  "container_name": "ctf-web-php-web-php-1",
+  "source_directory": "/root/code/ctf-sim/web-php",
+  "source_kind": "complete compose project directory"
+}

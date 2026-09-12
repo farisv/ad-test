@@ -1,0 +1,11 @@
+name: ctf-bin-socket
+services:
+  bin-socket:
+    build: .
+    ports:
+      - "9002:9002"
+    volumes:
+      - socket-data:/data
+
+volumes:
+  socket-data:

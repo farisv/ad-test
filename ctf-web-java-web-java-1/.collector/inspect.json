@@ -1,0 +1,253 @@
+[
+  {
+    "AppArmorProfile": "docker-default",
+    "Args": [
+      "java",
+      "App"
+    ],
+    "Config": {
+      "AttachStderr": true,
+      "AttachStdin": false,
+      "AttachStdout": true,
+      "Cmd": [
+        "java",
+        "App"
+      ],
+      "Domainname": "",
+      "Entrypoint": [
+        "/__cacert_entrypoint.sh"
+      ],
+      "Env": [
+        "PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+        "JAVA_HOME=/opt/java/openjdk",
+        "LANG=en_US.UTF-8",
+        "LANGUAGE=en_US:en",
+        "LC_ALL=en_US.UTF-8",
+        "JAVA_VERSION=jdk-25.0.4+7"
+      ],
+      "ExposedPorts": {
+        "8084/tcp": {}
+      },
+      "Hostname": "311216cb87bc",
+      "Image": "ctf-web-java-web-java",
+      "Labels": {
+        "com.docker.compose.config-hash": "91147638a39b56eb150b6f9d57995282232170c57e459809c5fb3f9f8bed4cd6",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.depends_on": "",
+        "com.docker.compose.image": "sha256:828dc589a49920bb111ee36bff4ec9cf762040ba0768aae6455a464feb9cf389",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "ctf-web-java",
+        "com.docker.compose.project.config_files": "/root/code/ctf-sim/web-java/compose.yaml",
+        "com.docker.compose.project.working_dir": "/root/code/ctf-sim/web-java",
+        "com.docker.compose.service": "web-java",
+        "com.docker.compose.version": "5.5.1"
+      },
+      "OpenStdin": false,
+      "StdinOnce": false,
+      "Tty": false,
+      "User": "10001:10001",
+      "Volumes": null,
+      "WorkingDir": "/app"
+    },
+    "Created": "2026-09-12T22:36:12.855926071Z",
+    "Driver": "overlayfs",
+    "ExecIDs": null,
+    "HostConfig": {
+      "AutoRemove": false,
+      "Binds": [
+        "ctf-web-java_java-data:/data:rw"
+      ],
+      "BlkioDeviceReadBps": null,
+      "BlkioDeviceReadIOps": null,
+      "BlkioDeviceWriteBps": null,
+      "BlkioDeviceWriteIOps": null,
+      "BlkioWeight": 0,
+      "BlkioWeightDevice": null,
+      "CapAdd": null,
+      "CapDrop": null,
+      "Cgroup": "",
+      "CgroupParent": "",
+      "CgroupnsMode": "private",
+      "ConsoleSize": [
+        0,
+        0
+      ],
+      "ContainerIDFile": "",
+      "CpuCount": 0,
+      "CpuPercent": 0,
+      "CpuPeriod": 0,
+      "CpuQuota": 0,
+      "CpuRealtimePeriod": 0,
+      "CpuRealtimeRuntime": 0,
+      "CpuShares": 0,
+      "CpusetCpus": "",
+      "CpusetMems": "",
+      "DeviceCgroupRules": null,
+      "DeviceRequests": null,
+      "Devices": null,
+      "Dns": null,
+      "DnsOptions": null,
+      "DnsSearch": null,
+      "ExtraHosts": [],
+      "GroupAdd": null,
+      "IOMaximumBandwidth": 0,
+      "IOMaximumIOps": 0,
+      "IpcMode": "private",
+      "Isolation": "",
+      "Links": null,
+      "LogConfig": {
+        "Config": {},
+        "Type": "json-file"
+      },
+      "MaskedPaths": [
+        "/proc/acpi",
+        "/proc/asound",
+        "/proc/interrupts",
+        "/proc/kcore",
+        "/proc/keys",
+        "/proc/latency_stats",
+        "/proc/sched_debug",
+        "/proc/scsi",
+        "/proc/timer_list",
+        "/proc/timer_stats",
+        "/sys/devices/virtual/powercap",
+        "/sys/firmware"
+      ],
+      "Memory": 0,
+      "MemoryReservation": 0,
+      "MemorySwap": 0,
+      "MemorySwappiness": null,
+      "NanoCpus": 0,
+      "NetworkMode": "ctf-web-java_default",
+      "OomKillDisable": null,
+      "OomScoreAdj": 0,
+      "PidMode": "",
+      "PidsLimit": null,
+      "PortBindings": {
+        "8084/tcp": [
+          {
+            "HostIp": "",
+            "HostPort": "8084"
+          }
+        ]
+      },
+      "Privileged": false,
+      "PublishAllPorts": false,
+      "ReadonlyPaths": [
+        "/proc/bus",
+        "/proc/fs",
+        "/proc/irq",
+        "/proc/sys",
+        "/proc/sysrq-trigger"
+      ],
+      "ReadonlyRootfs": false,
+      "RestartPolicy": {
+        "MaximumRetryCount": 0,
+        "Name": "no"
+      },
+      "Runtime": "runc",
+      "SecurityOpt": null,
+      "ShmSize": 67108864,
+      "UTSMode": "",
+      "Ulimits": null,
+      "UsernsMode": "",
+      "VolumeDriver": "",
+      "VolumesFrom": null
+    },
+    "HostnamePath": "/var/lib/docker/containers/311216cb87bc28645b9543ce4dc13736f63e5a395bd28cfd122afeeb91a5bac4/hostname",
+    "HostsPath": "/var/lib/docker/containers/311216cb87bc28645b9543ce4dc13736f63e5a395bd28cfd122afeeb91a5bac4/hosts",
+    "Id": "311216cb87bc28645b9543ce4dc13736f63e5a395bd28cfd122afeeb91a5bac4",
+    "Image": "sha256:9d7cd33a7c1bb77d0d2f339949b247e25ff552ee21082fbdcc4d127c54c03589",
+    "ImageManifestDescriptor": {
+      "digest": "sha256:828dc589a49920bb111ee36bff4ec9cf762040ba0768aae6455a464feb9cf389",
+      "mediaType": "application/vnd.oci.image.manifest.v1+json",
+      "platform": {
+        "architecture": "amd64",
+        "os": "linux"
+      },
+      "size": 1806
+    },
+    "LogPath": "/var/lib/docker/containers/311216cb87bc28645b9543ce4dc13736f63e5a395bd28cfd122afeeb91a5bac4/311216cb87bc28645b9543ce4dc13736f63e5a395bd28cfd122afeeb91a5bac4-json.log",
+    "MountLabel": "",
+    "Mounts": [
+      {
+        "Destination": "/data",
+        "Driver": "local",
+        "Mode": "rw",
+        "Name": "ctf-web-java_java-data",
+        "Propagation": "",
+        "RW": true,
+        "Source": "/var/lib/docker/volumes/ctf-web-java_java-data/_data",
+        "Type": "volume"
+      }
+    ],
+    "Name": "/ctf-web-java-web-java-1",
+    "NetworkSettings": {
+      "Networks": {
+        "ctf-web-java_default": {
+          "Aliases": [
+            "ctf-web-java-web-java-1",
+            "web-java"
+          ],
+          "DNSNames": [
+            "ctf-web-java-web-java-1",
+            "web-java",
+            "311216cb87bc"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "8e9db5377143b7fdeb5a183e436d9dca79591ba61bc2ad05021ad87e404a8cdd",
+          "Gateway": "172.25.0.1",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "172.25.0.2",
+          "IPPrefixLen": 16,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "96:12:12:8a:92:44",
+          "NetworkID": "d44e23b9b30f6ed5105a566981d37aa95d5578ae3b71087cc232765121221cf3"
+        }
+      },
+      "Ports": {
+        "8084/tcp": [
+          {
+            "HostIp": "0.0.0.0",
+            "HostPort": "8084"
+          },
+          {
+            "HostIp": "::",
+            "HostPort": "8084"
+          }
+        ]
+      },
+      "SandboxID": "233699a50316499d5b81d179c9b0e576720274be56502897947d56a810842b58",
+      "SandboxKey": "/var/run/docker/netns/233699a50316"
+    },
+    "Path": "/__cacert_entrypoint.sh",
+    "Platform": "linux",
+    "ProcessLabel": "",
+    "ResolvConfPath": "/var/lib/docker/containers/311216cb87bc28645b9543ce4dc13736f63e5a395bd28cfd122afeeb91a5bac4/resolv.conf",
+    "RestartCount": 0,
+    "State": {
+      "Dead": false,
+      "Error": "",
+      "ExitCode": 0,
+      "FinishedAt": "0001-01-01T00:00:00Z",
+      "OOMKilled": false,
+      "Paused": false,
+      "Pid": 28252,
+      "Restarting": false,
+      "Running": true,
+      "StartedAt": "2026-09-12T22:36:13.027711491Z",
+      "Status": "running"
+    },
+    "Storage": {
+      "RootFS": {
+        "Snapshot": {
+          "Name": "overlayfs"
+        }
+      }
+    }
+  }
+]

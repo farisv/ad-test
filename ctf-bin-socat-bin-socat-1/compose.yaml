@@ -1,0 +1,11 @@
+name: ctf-bin-socat
+services:
+  bin-socat:
+    build: .
+    ports:
+      - "9001:9001"
+    volumes:
+      - socat-data:/data
+
+volumes:
+  socat-data:

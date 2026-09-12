@@ -1,0 +1,262 @@
+[
+  {
+    "AppArmorProfile": "docker-default",
+    "Args": [
+      "php",
+      "-S",
+      "0.0.0.0:8081",
+      "router.php"
+    ],
+    "Config": {
+      "AttachStderr": true,
+      "AttachStdin": false,
+      "AttachStdout": true,
+      "Cmd": [
+        "php",
+        "-S",
+        "0.0.0.0:8081",
+        "router.php"
+      ],
+      "Domainname": "",
+      "Entrypoint": [
+        "docker-php-entrypoint"
+      ],
+      "Env": [
+        "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+        "PHPIZE_DEPS=autoconf \t\tdpkg-dev \t\tfile \t\tg++ \t\tgcc \t\tlibc-dev \t\tmake \t\tpkg-config \t\tre2c",
+        "PHP_INI_DIR=/usr/local/etc/php",
+        "PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64",
+        "PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64",
+        "PHP_LDFLAGS=-Wl,-O1 -pie",
+        "GPG_KEYS=AFD8691FDAEDF03BDF6E460563F15A9B715376CA 9D7F99A0CB8F05C8A6958D6256A97AF7600A39A6 0616E93D95AF471243E26761770426E17EBBB3DD",
+        "PHP_VERSION=8.4.25",
+        "PHP_URL=https://www.php.net/distributions/php-8.4.25.tar.xz",
+        "PHP_ASC_URL=https://www.php.net/distributions/php-8.4.25.tar.xz.asc",
+        "PHP_SHA256=dc1ad8b4109898d9db49744450403874858c23efc685b1032a50bd1e83906848"
+      ],
+      "ExposedPorts": {
+        "8081/tcp": {}
+      },
+      "Hostname": "13f5eac72faf",
+      "Image": "ctf-web-php-web-php",
+      "Labels": {
+        "com.docker.compose.config-hash": "dd09ce25721a50a27a6e0882718e0b3ec8d16985c13e1338a8dbfa12eb813966",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.depends_on": "",
+        "com.docker.compose.image": "sha256:ce96209d47954b0d0d8fefd24c629d89db6036095803699e0b57fa090afd8edc",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "ctf-web-php",
+        "com.docker.compose.project.config_files": "/root/code/ctf-sim/web-php/compose.yaml",
+        "com.docker.compose.project.working_dir": "/root/code/ctf-sim/web-php",
+        "com.docker.compose.service": "web-php",
+        "com.docker.compose.version": "5.5.1"
+      },
+      "OpenStdin": false,
+      "StdinOnce": false,
+      "Tty": false,
+      "User": "www-data",
+      "Volumes": null,
+      "WorkingDir": "/app"
+    },
+    "Created": "2026-09-12T22:36:05.872295236Z",
+    "Driver": "overlayfs",
+    "ExecIDs": null,
+    "HostConfig": {
+      "AutoRemove": false,
+      "Binds": [
+        "ctf-web-php_php-data:/data:rw"
+      ],
+      "BlkioDeviceReadBps": null,
+      "BlkioDeviceReadIOps": null,
+      "BlkioDeviceWriteBps": null,
+      "BlkioDeviceWriteIOps": null,
+      "BlkioWeight": 0,
+      "BlkioWeightDevice": null,
+      "CapAdd": null,
+      "CapDrop": null,
+      "Cgroup": "",
+      "CgroupParent": "",
+      "CgroupnsMode": "private",
+      "ConsoleSize": [
+        0,
+        0
+      ],
+      "ContainerIDFile": "",
+      "CpuCount": 0,
+      "CpuPercent": 0,
+      "CpuPeriod": 0,
+      "CpuQuota": 0,
+      "CpuRealtimePeriod": 0,
+      "CpuRealtimeRuntime": 0,
+      "CpuShares": 0,
+      "CpusetCpus": "",
+      "CpusetMems": "",
+      "DeviceCgroupRules": null,
+      "DeviceRequests": null,
+      "Devices": null,
+      "Dns": null,
+      "DnsOptions": null,
+      "DnsSearch": null,
+      "ExtraHosts": [],
+      "GroupAdd": null,
+      "IOMaximumBandwidth": 0,
+      "IOMaximumIOps": 0,
+      "IpcMode": "private",
+      "Isolation": "",
+      "Links": null,
+      "LogConfig": {
+        "Config": {},
+        "Type": "json-file"
+      },
+      "MaskedPaths": [
+        "/proc/acpi",
+        "/proc/asound",
+        "/proc/interrupts",
+        "/proc/kcore",
+        "/proc/keys",
+        "/proc/latency_stats",
+        "/proc/sched_debug",
+        "/proc/scsi",
+        "/proc/timer_list",
+        "/proc/timer_stats",
+        "/sys/devices/virtual/powercap",
+        "/sys/firmware"
+      ],
+      "Memory": 0,
+      "MemoryReservation": 0,
+      "MemorySwap": 0,
+      "MemorySwappiness": null,
+      "NanoCpus": 0,
+      "NetworkMode": "ctf-web-php_default",
+      "OomKillDisable": null,
+      "OomScoreAdj": 0,
+      "PidMode": "",
+      "PidsLimit": null,
+      "PortBindings": {
+        "8081/tcp": [
+          {
+            "HostIp": "",
+            "HostPort": "8081"
+          }
+        ]
+      },
+      "Privileged": false,
+      "PublishAllPorts": false,
+      "ReadonlyPaths": [
+        "/proc/bus",
+        "/proc/fs",
+        "/proc/irq",
+        "/proc/sys",
+        "/proc/sysrq-trigger"
+      ],
+      "ReadonlyRootfs": false,
+      "RestartPolicy": {
+        "MaximumRetryCount": 0,
+        "Name": "no"
+      },
+      "Runtime": "runc",
+      "SecurityOpt": null,
+      "ShmSize": 67108864,
+      "UTSMode": "",
+      "Ulimits": null,
+      "UsernsMode": "",
+      "VolumeDriver": "",
+      "VolumesFrom": null
+    },
+    "HostnamePath": "/var/lib/docker/containers/13f5eac72fafc2863b9f052078c0b6e6f08c5ad5698de9e586a27cc08b67528f/hostname",
+    "HostsPath": "/var/lib/docker/containers/13f5eac72fafc2863b9f052078c0b6e6f08c5ad5698de9e586a27cc08b67528f/hosts",
+    "Id": "13f5eac72fafc2863b9f052078c0b6e6f08c5ad5698de9e586a27cc08b67528f",
+    "Image": "sha256:b5ed01c9cfd47e7ba9c53b476a87ed8bf4ba80e8007b687a5b761fe0b7ce2b3f",
+    "ImageManifestDescriptor": {
+      "digest": "sha256:ce96209d47954b0d0d8fefd24c629d89db6036095803699e0b57fa090afd8edc",
+      "mediaType": "application/vnd.oci.image.manifest.v1+json",
+      "platform": {
+        "architecture": "amd64",
+        "os": "linux"
+      },
+      "size": 2947
+    },
+    "LogPath": "/var/lib/docker/containers/13f5eac72fafc2863b9f052078c0b6e6f08c5ad5698de9e586a27cc08b67528f/13f5eac72fafc2863b9f052078c0b6e6f08c5ad5698de9e586a27cc08b67528f-json.log",
+    "MountLabel": "",
+    "Mounts": [
+      {
+        "Destination": "/data",
+        "Driver": "local",
+        "Mode": "rw",
+        "Name": "ctf-web-php_php-data",
+        "Propagation": "",
+        "RW": true,
+        "Source": "/var/lib/docker/volumes/ctf-web-php_php-data/_data",
+        "Type": "volume"
+      }
+    ],
+    "Name": "/ctf-web-php-web-php-1",
+    "NetworkSettings": {
+      "Networks": {
+        "ctf-web-php_default": {
+          "Aliases": [
+            "ctf-web-php-web-php-1",
+            "web-php"
+          ],
+          "DNSNames": [
+            "ctf-web-php-web-php-1",
+            "web-php",
+            "13f5eac72faf"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "4b7886ce0881a2f42b6fc4899ac12feb956c2a4fcd034b43c0715d8c800eca68",
+          "Gateway": "172.22.0.1",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "172.22.0.2",
+          "IPPrefixLen": 16,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "0a:6b:9c:51:4b:d9",
+          "NetworkID": "3340cd70c0cebd0cb6c41b357b89906c22020f58178c192880ece735e081c767"
+        }
+      },
+      "Ports": {
+        "8081/tcp": [
+          {
+            "HostIp": "0.0.0.0",
+            "HostPort": "8081"
+          },
+          {
+            "HostIp": "::",
+            "HostPort": "8081"
+          }
+        ]
+      },
+      "SandboxID": "27c9de8b7bd8b83de842d3b3fec610f768dc0390af8cf564add1621bcb5f5798",
+      "SandboxKey": "/var/run/docker/netns/27c9de8b7bd8"
+    },
+    "Path": "docker-php-entrypoint",
+    "Platform": "linux",
+    "ProcessLabel": "",
+    "ResolvConfPath": "/var/lib/docker/containers/13f5eac72fafc2863b9f052078c0b6e6f08c5ad5698de9e586a27cc08b67528f/resolv.conf",
+    "RestartCount": 0,
+    "State": {
+      "Dead": false,
+      "Error": "",
+      "ExitCode": 0,
+      "FinishedAt": "0001-01-01T00:00:00Z",
+      "OOMKilled": false,
+      "Paused": false,
+      "Pid": 27679,
+      "Restarting": false,
+      "Running": true,
+      "StartedAt": "2026-09-12T22:36:06.013184546Z",
+      "Status": "running"
+    },
+    "Storage": {
+      "RootFS": {
+        "Snapshot": {
+          "Name": "overlayfs"
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,11 @@
+name: ctf-web-go
+services:
+  web-go:
+    build: .
+    ports:
+      - "8082:8082"
+    volumes:
+      - go-data:/data
+
+volumes:
+  go-data:

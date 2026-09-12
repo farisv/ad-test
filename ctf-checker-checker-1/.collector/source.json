@@ -1,0 +1,6 @@
+{
+  "container_id": "4bf618b5fa1ccdf8384842a84fd8bda6c02be9bfc0b93c9af15eb4105b1ece6e",
+  "container_name": "ctf-checker-checker-1",
+  "source_directory": "/root/code/ctf-sim/checker",
+  "source_kind": "complete compose project directory"
+}

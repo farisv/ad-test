@@ -1,0 +1,11 @@
+name: ctf-web-node
+services:
+  web-node:
+    build: .
+    ports:
+      - "8083:8083"
+    volumes:
+      - node-data:/data
+
+volumes:
+  node-data:

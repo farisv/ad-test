@@ -1,0 +1,6 @@
+{
+  "container_id": "cdaca3107df8e2725b0a21d013b8f1e1b00eaff480aa971894cb6bdfb672cff6",
+  "container_name": "ctf-web-node-web-node-1",
+  "source_directory": "/root/code/ctf-sim/web-node",
+  "source_kind": "complete compose project directory"
+}

@@ -1,0 +1,6 @@
+{
+  "container_id": "90ef8fdbada3e4a4a76f7953e2abc6b68952a16d03b5fa216638fe93fc598ce1",
+  "container_name": "ctf-bin-socat-bin-socat-1",
+  "source_directory": "/root/code/ctf-sim/bin-socat",
+  "source_kind": "complete compose project directory"
+}

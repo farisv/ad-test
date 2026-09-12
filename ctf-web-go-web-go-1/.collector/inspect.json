@@ -1,0 +1,242 @@
+[
+  {
+    "AppArmorProfile": "docker-default",
+    "Args": [],
+    "Config": {
+      "AttachStderr": true,
+      "AttachStdin": false,
+      "AttachStdout": true,
+      "Cmd": null,
+      "Domainname": "",
+      "Entrypoint": [
+        "/service"
+      ],
+      "Env": [
+        "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      ],
+      "ExposedPorts": {
+        "8082/tcp": {}
+      },
+      "Hostname": "72085d0c97f1",
+      "Image": "ctf-web-go-web-go",
+      "Labels": {
+        "com.docker.compose.config-hash": "90a89a3643da074c9310e810552e70990769243b5dcab8030423e15d223a49da",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.depends_on": "",
+        "com.docker.compose.image": "sha256:3e8b6445869d45a2c68b052f87c882d506f9ab1b9e4d37a166d3073b77677064",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "ctf-web-go",
+        "com.docker.compose.project.config_files": "/root/code/ctf-sim/web-go/compose.yaml",
+        "com.docker.compose.project.working_dir": "/root/code/ctf-sim/web-go",
+        "com.docker.compose.service": "web-go",
+        "com.docker.compose.version": "5.5.1"
+      },
+      "OpenStdin": false,
+      "StdinOnce": false,
+      "Tty": false,
+      "User": "65534:65534",
+      "Volumes": null,
+      "WorkingDir": "/"
+    },
+    "Created": "2026-09-12T22:36:08.07771073Z",
+    "Driver": "overlayfs",
+    "ExecIDs": null,
+    "HostConfig": {
+      "AutoRemove": false,
+      "Binds": [
+        "ctf-web-go_go-data:/data:rw"
+      ],
+      "BlkioDeviceReadBps": null,
+      "BlkioDeviceReadIOps": null,
+      "BlkioDeviceWriteBps": null,
+      "BlkioDeviceWriteIOps": null,
+      "BlkioWeight": 0,
+      "BlkioWeightDevice": null,
+      "CapAdd": null,
+      "CapDrop": null,
+      "Cgroup": "",
+      "CgroupParent": "",
+      "CgroupnsMode": "private",
+      "ConsoleSize": [
+        0,
+        0
+      ],
+      "ContainerIDFile": "",
+      "CpuCount": 0,
+      "CpuPercent": 0,
+      "CpuPeriod": 0,
+      "CpuQuota": 0,
+      "CpuRealtimePeriod": 0,
+      "CpuRealtimeRuntime": 0,
+      "CpuShares": 0,
+      "CpusetCpus": "",
+      "CpusetMems": "",
+      "DeviceCgroupRules": null,
+      "DeviceRequests": null,
+      "Devices": null,
+      "Dns": null,
+      "DnsOptions": null,
+      "DnsSearch": null,
+      "ExtraHosts": [],
+      "GroupAdd": null,
+      "IOMaximumBandwidth": 0,
+      "IOMaximumIOps": 0,
+      "IpcMode": "private",
+      "Isolation": "",
+      "Links": null,
+      "LogConfig": {
+        "Config": {},
+        "Type": "json-file"
+      },
+      "MaskedPaths": [
+        "/proc/acpi",
+        "/proc/asound",
+        "/proc/interrupts",
+        "/proc/kcore",
+        "/proc/keys",
+        "/proc/latency_stats",
+        "/proc/sched_debug",
+        "/proc/scsi",
+        "/proc/timer_list",
+        "/proc/timer_stats",
+        "/sys/devices/virtual/powercap",
+        "/sys/firmware"
+      ],
+      "Memory": 0,
+      "MemoryReservation": 0,
+      "MemorySwap": 0,
+      "MemorySwappiness": null,
+      "NanoCpus": 0,
+      "NetworkMode": "ctf-web-go_default",
+      "OomKillDisable": null,
+      "OomScoreAdj": 0,
+      "PidMode": "",
+      "PidsLimit": null,
+      "PortBindings": {
+        "8082/tcp": [
+          {
+            "HostIp": "",
+            "HostPort": "8082"
+          }
+        ]
+      },
+      "Privileged": false,
+      "PublishAllPorts": false,
+      "ReadonlyPaths": [
+        "/proc/bus",
+        "/proc/fs",
+        "/proc/irq",
+        "/proc/sys",
+        "/proc/sysrq-trigger"
+      ],
+      "ReadonlyRootfs": false,
+      "RestartPolicy": {
+        "MaximumRetryCount": 0,
+        "Name": "no"
+      },
+      "Runtime": "runc",
+      "SecurityOpt": null,
+      "ShmSize": 67108864,
+      "UTSMode": "",
+      "Ulimits": null,
+      "UsernsMode": "",
+      "VolumeDriver": "",
+      "VolumesFrom": null
+    },
+    "HostnamePath": "/var/lib/docker/containers/72085d0c97f19f64f95d4e03706cef65e7c8d22567a65024b5282930a2c17a4e/hostname",
+    "HostsPath": "/var/lib/docker/containers/72085d0c97f19f64f95d4e03706cef65e7c8d22567a65024b5282930a2c17a4e/hosts",
+    "Id": "72085d0c97f19f64f95d4e03706cef65e7c8d22567a65024b5282930a2c17a4e",
+    "Image": "sha256:6749646fa1aaa52b2c9304f4153567080eafd6b22443dd5e5e4a2e16670f2ff5",
+    "ImageManifestDescriptor": {
+      "digest": "sha256:3e8b6445869d45a2c68b052f87c882d506f9ab1b9e4d37a166d3073b77677064",
+      "mediaType": "application/vnd.oci.image.manifest.v1+json",
+      "platform": {
+        "architecture": "amd64",
+        "os": "linux"
+      },
+      "size": 860
+    },
+    "LogPath": "/var/lib/docker/containers/72085d0c97f19f64f95d4e03706cef65e7c8d22567a65024b5282930a2c17a4e/72085d0c97f19f64f95d4e03706cef65e7c8d22567a65024b5282930a2c17a4e-json.log",
+    "MountLabel": "",
+    "Mounts": [
+      {
+        "Destination": "/data",
+        "Driver": "local",
+        "Mode": "rw",
+        "Name": "ctf-web-go_go-data",
+        "Propagation": "",
+        "RW": true,
+        "Source": "/var/lib/docker/volumes/ctf-web-go_go-data/_data",
+        "Type": "volume"
+      }
+    ],
+    "Name": "/ctf-web-go-web-go-1",
+    "NetworkSettings": {
+      "Networks": {
+        "ctf-web-go_default": {
+          "Aliases": [
+            "ctf-web-go-web-go-1",
+            "web-go"
+          ],
+          "DNSNames": [
+            "ctf-web-go-web-go-1",
+            "web-go",
+            "72085d0c97f1"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "009e130df5a7af38017f0451a5750e4fef51cec96d4862489ac464e45532bcee",
+          "Gateway": "172.23.0.1",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "172.23.0.2",
+          "IPPrefixLen": 16,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "6a:9c:3f:63:94:23",
+          "NetworkID": "bcb4f0be23299bb4b6961222c59f1589448ed67f2180447ebdb0908957001d5f"
+        }
+      },
+      "Ports": {
+        "8082/tcp": [
+          {
+            "HostIp": "0.0.0.0",
+            "HostPort": "8082"
+          },
+          {
+            "HostIp": "::",
+            "HostPort": "8082"
+          }
+        ]
+      },
+      "SandboxID": "72f642499c5f2ecb51f01002766e3936c70aa0480f55b983e6929218d914868f",
+      "SandboxKey": "/var/run/docker/netns/72f642499c5f"
+    },
+    "Path": "/service",
+    "Platform": "linux",
+    "ProcessLabel": "",
+    "ResolvConfPath": "/var/lib/docker/containers/72085d0c97f19f64f95d4e03706cef65e7c8d22567a65024b5282930a2c17a4e/resolv.conf",
+    "RestartCount": 0,
+    "State": {
+      "Dead": false,
+      "Error": "",
+      "ExitCode": 0,
+      "FinishedAt": "0001-01-01T00:00:00Z",
+      "OOMKilled": false,
+      "Paused": false,
+      "Pid": 27879,
+      "Restarting": false,
+      "Running": true,
+      "StartedAt": "2026-09-12T22:36:08.218972344Z",
+      "Status": "running"
+    },
+    "Storage": {
+      "RootFS": {
+        "Snapshot": {
+          "Name": "overlayfs"
+        }
+      }
+    }
+  }
+]
