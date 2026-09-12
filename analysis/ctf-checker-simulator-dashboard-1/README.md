@@ -1,3 +1,5 @@
+Note: Dumb quick analysis with naive deterministic checking. Only for situational awareness.
+
 # ctf-checker-simulator-dashboard-1
 
 This report combines static inspection and dynamic observations. Pattern names are neutral review cues, not conclusions.
@@ -60,21 +62,6 @@ These locations matched review-oriented source patterns. Inspect the surrounding
 | Potential XSS sink | `source/static/app.js:13` | `for(const tick of data.ticks){const results=tick.results\|\|[],up=results.filter(r=>r.sla_ok).length,stolen=results.filter(r=>r.steal_ok).length,errors=results.filter(r=>r.sla_error\|\|r.steal_error).map(r=>`${r.service}: ${r.sla_error\|\|''}${r.` |
 | SSRF-capable request | `source/static/app.js:15` | `async function refresh(){try{const r=await fetch('/api/status',{cache:'no-store'});render(await r.json())}catch(e){document.querySelector('#runtime').textContent='Dashboard API unavailable'}}` |
 | SSRF-capable request | `source/static/app.js:16` | `run.onclick=async()=>{run.disabled=true;await fetch('/api/run',{method:'POST'});setTimeout(refresh,300)};` |
-
-## Cross-file relationships to trace
-
-Compared definitions, references, and patterns across 8 source file(s). These links identify code paths worth following; they do not assert runtime data flow.
-
-### Pattern relationships
-
-| Relationship | Files | Locations |
-|---|---:|---|
-| Authorization decision appears in 2 files | 2 | source/README.md:36; source/app.py:84; source/app.py:134; source/app.py:151; source/app.py:181 |
-| SSRF-capable request appears in 2 files | 2 | source/app.py:12; source/app.py:85; source/app.py:87; source/static/app.js:15; source/static/app.js:16 |
-| Request handling and data access appear in separate files | 2 | Direct object identifier: source/static/app.js:2; Raw SQL execution: source/app.py:44; Raw SQL execution: source/app.py:74; Raw SQL execution: source/app.py:76; Raw SQL execution: source/app.py:255; Raw SQL execution: source/app.py:260; Raw SQL execution: source/app.py:264; Raw SQL execution: source/app.py:276; Raw SQL execution: source/app.py:300; Raw SQL execution: source/app.py:306; Raw SQL execution: source/app.py:321; Raw SQL execution: source/app.py:323; SQL query: source/app.py:255; SQL query: source/app.py:260; SQL query: source/app.py:276; SQL query: source/app.py:300; SQL query: source/app.py:306; SQL query: source/app.py:321; SQL query: source/app.py:323; SQL string construction: source/static/app.js:7 |
-| Identity decisions and stored-object operations appear in separate files | 3 | Authorization decision: source/README.md:36; Authorization decision: source/app.py:84; Authorization decision: source/app.py:134; Authorization decision: source/app.py:151; Authorization decision: source/app.py:181; Direct object identifier: source/static/app.js:2; Raw SQL execution: source/app.py:44; Raw SQL execution: source/app.py:74; Raw SQL execution: source/app.py:76; Raw SQL execution: source/app.py:255; Raw SQL execution: source/app.py:260; Raw SQL execution: source/app.py:264; Raw SQL execution: source/app.py:276; Raw SQL execution: source/app.py:300; Raw SQL execution: source/app.py:306; Raw SQL execution: source/app.py:321; Raw SQL execution: source/app.py:323; SQL query: source/app.py:255; SQL query: source/app.py:260; SQL query: source/app.py:276 |
-
-No defined symbol was referenced from another inspected file.
 
 ## Routes and entry points
 
