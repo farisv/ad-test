@@ -1,0 +1,33 @@
+{
+  "archives": [
+    {
+      "kind": "rootfs",
+      "parts": [
+        {
+          "name": "rootfs.tar.gz.part-0000",
+          "sha256": "faf4fd9cc7d71381ba21a8459babc2c571053c889062ed0e1503bea4f38b90f2",
+          "size": 16423601
+        }
+      ],
+      "sha256": "faf4fd9cc7d71381ba21a8459babc2c571053c889062ed0e1503bea4f38b90f2",
+      "size": 16423601
+    },
+    {
+      "destination": "/state",
+      "kind": "mount",
+      "parts": [
+        {
+          "name": "mount-00.tar.gz.part-0000",
+          "sha256": "eab1c2e1715ab2eb7d28557a5ec89980668f9134a72dbc705f3d3146891f048a",
+          "size": 16665
+        }
+      ],
+      "sha256": "eab1c2e1715ab2eb7d28557a5ec89980668f9134a72dbc705f3d3146891f048a",
+      "size": 16665,
+      "source": "/var/lib/docker/volumes/attack-defense-lab_checker-state/_data",
+      "type": "volume"
+    }
+  ],
+  "container_id": "e1e7b694e161",
+  "service_name": "checker"
+}

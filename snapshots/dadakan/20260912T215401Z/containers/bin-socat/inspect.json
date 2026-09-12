@@ -1,0 +1,252 @@
+[
+  {
+    "AppArmorProfile": "docker-default",
+    "Args": [
+      "TCP-LISTEN:9001,reuseaddr,fork",
+      "EXEC:/app/service,stderr"
+    ],
+    "Config": {
+      "AttachStderr": true,
+      "AttachStdin": false,
+      "AttachStdout": true,
+      "Cmd": [
+        "socat",
+        "TCP-LISTEN:9001,reuseaddr,fork",
+        "EXEC:/app/service,stderr"
+      ],
+      "Domainname": "",
+      "Entrypoint": null,
+      "Env": [
+        "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      ],
+      "ExposedPorts": {
+        "9001/tcp": {}
+      },
+      "Hostname": "e32c7b2ddbc8",
+      "Image": "attack-defense-lab-bin-socat",
+      "Labels": {
+        "com.docker.compose.config-hash": "52bb74c7e5b334d7a90564f55a18550caaad147e3aa7939340a8b80f33b203e9",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.depends_on": "",
+        "com.docker.compose.image": "sha256:7fd69b6fd52fa350368696ded80c0f10c57315705f8c056dc0abac35126f495a",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "attack-defense-lab",
+        "com.docker.compose.project.config_files": "/root/code/ctf-sim/compose.yaml",
+        "com.docker.compose.project.working_dir": "/root/code/ctf-sim",
+        "com.docker.compose.replace": "bin-socat-1",
+        "com.docker.compose.service": "bin-socat",
+        "com.docker.compose.version": "5.5.1"
+      },
+      "OpenStdin": false,
+      "StdinOnce": false,
+      "Tty": false,
+      "User": "10001:10001",
+      "Volumes": null,
+      "WorkingDir": "/app"
+    },
+    "Created": "2026-09-12T21:48:45.010580553Z",
+    "Driver": "overlayfs",
+    "ExecIDs": null,
+    "HostConfig": {
+      "AutoRemove": false,
+      "Binds": [
+        "attack-defense-lab_socat-data:/data:rw"
+      ],
+      "BlkioDeviceReadBps": null,
+      "BlkioDeviceReadIOps": null,
+      "BlkioDeviceWriteBps": null,
+      "BlkioDeviceWriteIOps": null,
+      "BlkioWeight": 0,
+      "BlkioWeightDevice": null,
+      "CapAdd": null,
+      "CapDrop": [
+        "ALL"
+      ],
+      "Cgroup": "",
+      "CgroupParent": "",
+      "CgroupnsMode": "private",
+      "ConsoleSize": [
+        0,
+        0
+      ],
+      "ContainerIDFile": "",
+      "CpuCount": 0,
+      "CpuPercent": 0,
+      "CpuPeriod": 0,
+      "CpuQuota": 0,
+      "CpuRealtimePeriod": 0,
+      "CpuRealtimeRuntime": 0,
+      "CpuShares": 0,
+      "CpusetCpus": "",
+      "CpusetMems": "",
+      "DeviceCgroupRules": null,
+      "DeviceRequests": null,
+      "Devices": null,
+      "Dns": null,
+      "DnsOptions": null,
+      "DnsSearch": null,
+      "ExtraHosts": [],
+      "GroupAdd": null,
+      "IOMaximumBandwidth": 0,
+      "IOMaximumIOps": 0,
+      "IpcMode": "private",
+      "Isolation": "",
+      "Links": null,
+      "LogConfig": {
+        "Config": {},
+        "Type": "json-file"
+      },
+      "MaskedPaths": [
+        "/proc/acpi",
+        "/proc/asound",
+        "/proc/interrupts",
+        "/proc/kcore",
+        "/proc/keys",
+        "/proc/latency_stats",
+        "/proc/sched_debug",
+        "/proc/scsi",
+        "/proc/timer_list",
+        "/proc/timer_stats",
+        "/sys/devices/virtual/powercap",
+        "/sys/firmware"
+      ],
+      "Memory": 268435456,
+      "MemoryReservation": 0,
+      "MemorySwap": 536870912,
+      "MemorySwappiness": null,
+      "NanoCpus": 0,
+      "NetworkMode": "attack-defense-lab_arena",
+      "OomKillDisable": null,
+      "OomScoreAdj": 0,
+      "PidMode": "",
+      "PidsLimit": 128,
+      "PortBindings": {
+        "9001/tcp": [
+          {
+            "HostIp": "",
+            "HostPort": "9001"
+          }
+        ]
+      },
+      "Privileged": false,
+      "PublishAllPorts": false,
+      "ReadonlyPaths": [
+        "/proc/bus",
+        "/proc/fs",
+        "/proc/irq",
+        "/proc/sys",
+        "/proc/sysrq-trigger"
+      ],
+      "ReadonlyRootfs": false,
+      "RestartPolicy": {
+        "MaximumRetryCount": 0,
+        "Name": "unless-stopped"
+      },
+      "Runtime": "runc",
+      "SecurityOpt": [
+        "no-new-privileges:true"
+      ],
+      "ShmSize": 67108864,
+      "UTSMode": "",
+      "Ulimits": null,
+      "UsernsMode": "",
+      "VolumeDriver": "",
+      "VolumesFrom": null
+    },
+    "HostnamePath": "/var/lib/docker/containers/e32c7b2ddbc86f150165b24c2dd0392603f907a3bd5ba436f1086f9df3755e42/hostname",
+    "HostsPath": "/var/lib/docker/containers/e32c7b2ddbc86f150165b24c2dd0392603f907a3bd5ba436f1086f9df3755e42/hosts",
+    "Id": "e32c7b2ddbc86f150165b24c2dd0392603f907a3bd5ba436f1086f9df3755e42",
+    "Image": "sha256:58d6af38b1dd7411898fb4ad005f70fbf20b2c686f790871e704270f3d0dd90f",
+    "ImageManifestDescriptor": {
+      "digest": "sha256:7fd69b6fd52fa350368696ded80c0f10c57315705f8c056dc0abac35126f495a",
+      "mediaType": "application/vnd.oci.image.manifest.v1+json",
+      "platform": {
+        "architecture": "amd64",
+        "os": "linux"
+      },
+      "size": 1236
+    },
+    "LogPath": "/var/lib/docker/containers/e32c7b2ddbc86f150165b24c2dd0392603f907a3bd5ba436f1086f9df3755e42/e32c7b2ddbc86f150165b24c2dd0392603f907a3bd5ba436f1086f9df3755e42-json.log",
+    "MountLabel": "",
+    "Mounts": [
+      {
+        "Destination": "/data",
+        "Driver": "local",
+        "Mode": "rw",
+        "Name": "attack-defense-lab_socat-data",
+        "Propagation": "",
+        "RW": true,
+        "Source": "/var/lib/docker/volumes/attack-defense-lab_socat-data/_data",
+        "Type": "volume"
+      }
+    ],
+    "Name": "/attack-defense-lab-bin-socat-1",
+    "NetworkSettings": {
+      "Networks": {
+        "attack-defense-lab_arena": {
+          "Aliases": [
+            "attack-defense-lab-bin-socat-1",
+            "bin-socat"
+          ],
+          "DNSNames": [
+            "attack-defense-lab-bin-socat-1",
+            "bin-socat",
+            "e32c7b2ddbc8"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "663dbb45cda324800bf151eea1079a5e0200483ead625b1a01351321a042ad6d",
+          "Gateway": "172.18.0.1",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "172.18.0.3",
+          "IPPrefixLen": 16,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "ea:e8:d9:48:ee:b8",
+          "NetworkID": "299921a016417817e2b697c07e058b527007bd0906265af7633094c354ba7019"
+        }
+      },
+      "Ports": {
+        "9001/tcp": [
+          {
+            "HostIp": "0.0.0.0",
+            "HostPort": "9001"
+          },
+          {
+            "HostIp": "::",
+            "HostPort": "9001"
+          }
+        ]
+      },
+      "SandboxID": "7e2ce14c60f4d877064bd6b29b73310defc6c6f327a97c684c8a273f8b64d0dc",
+      "SandboxKey": "/var/run/docker/netns/7e2ce14c60f4"
+    },
+    "Path": "socat",
+    "Platform": "linux",
+    "ProcessLabel": "",
+    "ResolvConfPath": "/var/lib/docker/containers/e32c7b2ddbc86f150165b24c2dd0392603f907a3bd5ba436f1086f9df3755e42/resolv.conf",
+    "RestartCount": 0,
+    "State": {
+      "Dead": false,
+      "Error": "",
+      "ExitCode": 0,
+      "FinishedAt": "0001-01-01T00:00:00Z",
+      "OOMKilled": false,
+      "Paused": false,
+      "Pid": 12164,
+      "Restarting": false,
+      "Running": true,
+      "StartedAt": "2026-09-12T21:49:06.596046498Z",
+      "Status": "running"
+    },
+    "Storage": {
+      "RootFS": {
+        "Snapshot": {
+          "Name": "overlayfs"
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,60 @@
+[
+    {
+        "Id": "sha256:cd34694a9c907033d429a4478e91578e5728771a68c0128b00434c618a57bf1b",
+        "RepoTags": [
+            "attack-defense-lab-bin-socket:latest"
+        ],
+        "RepoDigests": [
+            "attack-defense-lab-bin-socket@sha256:cd34694a9c907033d429a4478e91578e5728771a68c0128b00434c618a57bf1b"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-09-12T21:48:16.075038757Z",
+        "Config": {
+            "User": "10002:10002",
+            "ExposedPorts": {
+                "9002/tcp": {}
+            },
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "/app/server"
+            ],
+            "WorkingDir": "/app",
+            "Labels": {
+                "com.docker.compose.project": "attack-defense-lab",
+                "com.docker.compose.service": "bin-socket",
+                "com.docker.compose.version": "5.5.1"
+            },
+            "ArgsEscaped": true
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 12987773,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:31ad4a471c6852bfec14d757cc75a566c82a9769f12c3918cf6bf52cc0eeb3d0",
+                "sha256:4f79c49e49f111f3eee41728ec37c72cafe7bb6d04bed287e0c0d9be32117da4",
+                "sha256:25cbfa9660b01e2bf28fb6d834f55a19e2bb29eb517d243dfb0fd98e944e6729",
+                "sha256:139f9f957cdfe51730b2656963cba6c277b8af65dc874d0167300c0b8754319e"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-09-12T21:48:17.703006679Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:cd34694a9c907033d429a4478e91578e5728771a68c0128b00434c618a57bf1b",
+            "size": 856
+        },
+        "Identity": {
+            "Build": [
+                {
+                    "Ref": "6eh8do9bgxxwdj44z3z5vkhx0",
+                    "CreatedAt": "2026-09-12T21:48:17.897590698Z"
+                }
+            ]
+        }
+    }
+]

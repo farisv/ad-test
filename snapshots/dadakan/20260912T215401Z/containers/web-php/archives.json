@@ -1,0 +1,38 @@
+{
+  "archives": [
+    {
+      "kind": "rootfs",
+      "parts": [
+        {
+          "name": "rootfs.tar.gz.part-0000",
+          "sha256": "3c2374d5971501174128a7f0e09a0a401d815b17718d225c4ef8a2a71b02af8d",
+          "size": 94371840
+        },
+        {
+          "name": "rootfs.tar.gz.part-0001",
+          "sha256": "fe838b3bb4dad701cce8670b6497ad050c23bc089a9aab302048137b8e766466",
+          "size": 88091990
+        }
+      ],
+      "sha256": "adc6677f8e209103574207f402869fb8335d3f679ed479377f4b96fa02e10816",
+      "size": 182463830
+    },
+    {
+      "destination": "/data",
+      "kind": "mount",
+      "parts": [
+        {
+          "name": "mount-00.tar.gz.part-0000",
+          "sha256": "b291a522975bfa8efbc21b4c0d29fb641bb80ebca1d6d667ac6d548a9c629f5c",
+          "size": 77171
+        }
+      ],
+      "sha256": "b291a522975bfa8efbc21b4c0d29fb641bb80ebca1d6d667ac6d548a9c629f5c",
+      "size": 77171,
+      "source": "/var/lib/docker/volumes/attack-defense-lab_php-data/_data",
+      "type": "volume"
+    }
+  ],
+  "container_id": "378e5714e8f9",
+  "service_name": "web-php"
+}

@@ -1,0 +1,33 @@
+{
+  "archives": [
+    {
+      "kind": "rootfs",
+      "parts": [
+        {
+          "name": "rootfs.tar.gz.part-0000",
+          "sha256": "3241bc49262d77c98c0151dc1d58a7deb1af6273c2acff6a91a1800aa9aa68f0",
+          "size": 16421676
+        }
+      ],
+      "sha256": "3241bc49262d77c98c0151dc1d58a7deb1af6273c2acff6a91a1800aa9aa68f0",
+      "size": 16421676
+    },
+    {
+      "destination": "/downloads",
+      "kind": "mount",
+      "parts": [
+        {
+          "name": "mount-00.tar.gz.part-0000",
+          "sha256": "cda8412b9265724d36c2cb15a060be5a4f4e516bc3fcae0e906059aa0177a6c5",
+          "size": 49978
+        }
+      ],
+      "sha256": "cda8412b9265724d36c2cb15a060be5a4f4e516bc3fcae0e906059aa0177a6c5",
+      "size": 49978,
+      "source": "/root/code/releases",
+      "type": "bind"
+    }
+  ],
+  "container_id": "cdcbed8df90e",
+  "service_name": "files"
+}

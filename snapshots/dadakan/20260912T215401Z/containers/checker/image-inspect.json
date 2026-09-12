@@ -1,0 +1,64 @@
+[
+    {
+        "Id": "sha256:8d25d2f83c03c0a0dfd409634caf8ae65824ed862a786f74b092bfee688420de",
+        "RepoTags": [
+            "attack-defense-lab-checker:latest"
+        ],
+        "RepoDigests": [
+            "attack-defense-lab-checker@sha256:8d25d2f83c03c0a0dfd409634caf8ae65824ed862a786f74b092bfee688420de"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-09-12T21:48:04.639064556Z",
+        "Config": {
+            "User": "65534:65534",
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+                "PYTHON_VERSION=3.13.15",
+                "PYTHON_SHA256=1e66a7945a48390ee4c2a4268a0e4185884059a13c4aab6d148aa208deea4a76"
+            ],
+            "Cmd": [
+                "python",
+                "checker.py"
+            ],
+            "WorkingDir": "/app",
+            "Labels": {
+                "com.docker.compose.project": "attack-defense-lab",
+                "com.docker.compose.service": "checker",
+                "com.docker.compose.version": "5.5.1"
+            },
+            "ArgsEscaped": true
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 78604917,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:34884abbe92863fce933ed7c39c0e045631af0ed86d5cc0dfbdf9fdca426ce3c",
+                "sha256:362771c038195c54f35d78eba40a29daaf29ac4d8d878218a8462145c4b27d30",
+                "sha256:48fefbe60b9e9a3cb9b686aa3336ddd971ff4b4e5c3a30d5ac47539c04090a1c",
+                "sha256:8e9ff8da1d6b4032a8bf7e7ee70179094ca495ce933fc692a825b4fdd30a2a1f",
+                "sha256:ae54cc74ebf0becf993449a7f2fb9b86816e865d1ba376b70dc1c5a34a3e80d4",
+                "sha256:e14478ab36dca08c151b18094a7df4c0d82f39378a8aba25b5d6d952ba90cad7",
+                "sha256:b7b55aad00042a013608330aed5e127d5032dcad5f9a76b9e97eaf8c5b6eaafe"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-09-12T21:48:06.400715954Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:8d25d2f83c03c0a0dfd409634caf8ae65824ed862a786f74b092bfee688420de",
+            "size": 856
+        },
+        "Identity": {
+            "Build": [
+                {
+                    "Ref": "iatse09tgxmow0dax3636gdv4",
+                    "CreatedAt": "2026-09-12T21:48:06.649970755Z"
+                }
+            ]
+        }
+    }
+]

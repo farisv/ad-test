@@ -1,0 +1,84 @@
+{
+  "created_at": "2026-09-12T21:55:57.196593+00:00",
+  "host_inventory": [
+    "docker-ps.txt",
+    "ifconfig.txt"
+  ],
+  "hostname": "dadakan",
+  "schema": 1,
+  "services": [
+    {
+      "archives": 2,
+      "compose_project": "attack-defense-lab",
+      "compose_service": "checker",
+      "container_id": "e1e7b694e161",
+      "image": "attack-defense-lab-checker",
+      "name": "checker"
+    },
+    {
+      "archives": 2,
+      "compose_project": "attack-defense-lab",
+      "compose_service": "web-php",
+      "container_id": "378e5714e8f9",
+      "image": "attack-defense-lab-web-php",
+      "name": "web-php"
+    },
+    {
+      "archives": 2,
+      "compose_project": "attack-defense-lab",
+      "compose_service": "web-java",
+      "container_id": "aad40033b2a0",
+      "image": "attack-defense-lab-web-java",
+      "name": "web-java"
+    },
+    {
+      "archives": 2,
+      "compose_project": "attack-defense-lab",
+      "compose_service": "web-node",
+      "container_id": "970fd263a68c",
+      "image": "attack-defense-lab-web-node",
+      "name": "web-node"
+    },
+    {
+      "archives": 2,
+      "compose_project": "attack-defense-lab",
+      "compose_service": "bin-socat",
+      "container_id": "e32c7b2ddbc8",
+      "image": "attack-defense-lab-bin-socat",
+      "name": "bin-socat"
+    },
+    {
+      "archives": 2,
+      "compose_project": "attack-defense-lab",
+      "compose_service": "bin-socket",
+      "container_id": "fd36ccb36931",
+      "image": "attack-defense-lab-bin-socket",
+      "name": "bin-socket"
+    },
+    {
+      "archives": 2,
+      "compose_project": "attack-defense-lab",
+      "compose_service": "web-go",
+      "container_id": "5046a4fcd644",
+      "image": "attack-defense-lab-web-go",
+      "name": "web-go"
+    },
+    {
+      "archives": 2,
+      "compose_project": "ctf-checker-simulator",
+      "compose_service": "dashboard",
+      "container_id": "f97e5190eea0",
+      "image": "ctf-checker-simulator-dashboard",
+      "name": "dashboard"
+    },
+    {
+      "archives": 2,
+      "compose_project": "ctf-download-server",
+      "compose_service": "files",
+      "container_id": "cdcbed8df90e",
+      "image": "python:3.13-alpine",
+      "name": "files"
+    }
+  ],
+  "snapshot_id": "20260912T215401Z"
+}

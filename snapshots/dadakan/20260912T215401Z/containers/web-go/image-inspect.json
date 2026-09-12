@@ -1,0 +1,55 @@
+[
+    {
+        "Id": "sha256:a714b72950b33526cab23bc2ad940ca267edb1b090da31039e59f67308637988",
+        "RepoTags": [
+            "attack-defense-lab-web-go:latest"
+        ],
+        "RepoDigests": [
+            "attack-defense-lab-web-go@sha256:a714b72950b33526cab23bc2ad940ca267edb1b090da31039e59f67308637988"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-09-12T21:48:43.333647079Z",
+        "Config": {
+            "User": "65534:65534",
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Entrypoint": [
+                "/service"
+            ],
+            "WorkingDir": "/",
+            "Labels": {
+                "com.docker.compose.project": "attack-defense-lab",
+                "com.docker.compose.service": "web-go",
+                "com.docker.compose.version": "5.5.1"
+            }
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 21329442,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:31ad4a471c6852bfec14d757cc75a566c82a9769f12c3918cf6bf52cc0eeb3d0",
+                "sha256:3ed2f1187dc843b30c611313562c38c8dbe40ef16d57c5ef6ff09c4d9d8d1fd2",
+                "sha256:67fd35a223708c457fea8759d4baca79194ce440c9785beccf7efb4f8b3861b7"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-09-12T21:48:44.135304192Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:a714b72950b33526cab23bc2ad940ca267edb1b090da31039e59f67308637988",
+            "size": 855
+        },
+        "Identity": {
+            "Build": [
+                {
+                    "Ref": "ihkye61upl41804yr4tythamc",
+                    "CreatedAt": "2026-09-12T21:48:44.265210537Z"
+                }
+            ]
+        }
+    }
+]

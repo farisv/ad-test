@@ -1,0 +1,63 @@
+[
+    {
+        "Id": "sha256:58d6af38b1dd7411898fb4ad005f70fbf20b2c686f790871e704270f3d0dd90f",
+        "RepoTags": [
+            "attack-defense-lab-bin-socat:latest"
+        ],
+        "RepoDigests": [
+            "attack-defense-lab-bin-socat@sha256:58d6af38b1dd7411898fb4ad005f70fbf20b2c686f790871e704270f3d0dd90f"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-09-12T21:48:15.769288053Z",
+        "Config": {
+            "User": "10001:10001",
+            "ExposedPorts": {
+                "9001/tcp": {}
+            },
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "socat",
+                "TCP-LISTEN:9001,reuseaddr,fork",
+                "EXEC:/app/service,stderr"
+            ],
+            "WorkingDir": "/app",
+            "Labels": {
+                "com.docker.compose.project": "attack-defense-lab",
+                "com.docker.compose.service": "bin-socat",
+                "com.docker.compose.version": "5.5.1"
+            },
+            "ArgsEscaped": true
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 15017527,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:31ad4a471c6852bfec14d757cc75a566c82a9769f12c3918cf6bf52cc0eeb3d0",
+                "sha256:73e0bf77bc527eb339cdb797e27cbaa71ad183f65ec95efda9a105136c5d6f03",
+                "sha256:1f790f788efd65630c2dfd91daca0bb28e8d0a8e58c916e29783829688c7fbde",
+                "sha256:94dbba819b8db2eb7e87002a2791206f6a662692aabccf904e2f2b510afa0981",
+                "sha256:39932da0f1035bae8dba54a898ca65b5a9061601199589514a41fd3aee10fae7"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-09-12T21:48:17.461095487Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:58d6af38b1dd7411898fb4ad005f70fbf20b2c686f790871e704270f3d0dd90f",
+            "size": 856
+        },
+        "Identity": {
+            "Build": [
+                {
+                    "Ref": "hh03ms0tw7zq0rs9oovld4e66",
+                    "CreatedAt": "2026-09-12T21:48:17.813368993Z"
+                }
+            ]
+        }
+    }
+]

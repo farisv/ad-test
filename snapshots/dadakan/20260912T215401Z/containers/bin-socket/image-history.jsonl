@@ -1,0 +1,8 @@
+{"Comment":"buildkit.dockerfile.v0","CreatedAt":"2026-09-12T21:48:16Z","CreatedBy":"CMD [\"/app/server\"]","CreatedSince":"7 minutes ago","ID":"sha256:cd34694a9c907033d429a4478e91578e5728771a68c0128b00434c618a57bf1b","Size":"0B"}
+{"Comment":"buildkit.dockerfile.v0","CreatedAt":"2026-09-12T21:48:16Z","CreatedBy":"EXPOSE [9002/tcp]","CreatedSince":"7 minutes ago","ID":"\u003cmissing\u003e","Size":"0B"}
+{"Comment":"buildkit.dockerfile.v0","CreatedAt":"2026-09-12T21:48:16Z","CreatedBy":"USER 10002:10002","CreatedSince":"7 minutes ago","ID":"\u003cmissing\u003e","Size":"0B"}
+{"Comment":"buildkit.dockerfile.v0","CreatedAt":"2026-09-12T21:48:16Z","CreatedBy":"RUN /bin/sh -c mkdir -p /data/records \u0026\u0026 chown -R 10002:10002 /data # buildkit","CreatedSince":"7 minutes ago","ID":"\u003cmissing\u003e","Size":"12.3kB"}
+{"Comment":"buildkit.dockerfile.v0","CreatedAt":"2026-09-12T21:48:15Z","CreatedBy":"COPY /src/server ./ # buildkit","CreatedSince":"7 minutes ago","ID":"\u003cmissing\u003e","Size":"41kB"}
+{"Comment":"buildkit.dockerfile.v0","CreatedAt":"2026-09-12T21:48:06Z","CreatedBy":"WORKDIR /app","CreatedSince":"7 minutes ago","ID":"\u003cmissing\u003e","Size":"8.19kB"}
+{"Comment":"buildkit.dockerfile.v0","CreatedAt":"2026-06-22T19:20:09Z","CreatedBy":"CMD [\"/bin/sh\"]","CreatedSince":"2 months ago","ID":"\u003cmissing\u003e","Size":"0B"}
+{"Comment":"buildkit.dockerfile.v0","CreatedAt":"2026-06-22T19:20:09Z","CreatedBy":"ADD alpine-minirootfs-3.23.5-x86_64.tar.gz / # buildkit","CreatedSince":"2 months ago","ID":"\u003cmissing\u003e","Size":"9.07MB"}

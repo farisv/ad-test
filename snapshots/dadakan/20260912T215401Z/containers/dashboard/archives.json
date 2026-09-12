@@ -1,0 +1,33 @@
+{
+  "archives": [
+    {
+      "kind": "rootfs",
+      "parts": [
+        {
+          "name": "rootfs.tar.gz.part-0000",
+          "sha256": "8b11eb5ea1decfde736401532f5fc1b2944f66b139a9fe2a60264b2d292834a3",
+          "size": 16425163
+        }
+      ],
+      "sha256": "8b11eb5ea1decfde736401532f5fc1b2944f66b139a9fe2a60264b2d292834a3",
+      "size": 16425163
+    },
+    {
+      "destination": "/data",
+      "kind": "mount",
+      "parts": [
+        {
+          "name": "mount-00.tar.gz.part-0000",
+          "sha256": "9a48eb07295d406f0e89ad9f24d2efee6c4a49c97ae62aae824b2d8464aada12",
+          "size": 4446657
+        }
+      ],
+      "sha256": "9a48eb07295d406f0e89ad9f24d2efee6c4a49c97ae62aae824b2d8464aada12",
+      "size": 4446657,
+      "source": "/var/lib/docker/volumes/ctf-checker-simulator_simulator-data/_data",
+      "type": "volume"
+    }
+  ],
+  "container_id": "f97e5190eea0",
+  "service_name": "dashboard"
+}

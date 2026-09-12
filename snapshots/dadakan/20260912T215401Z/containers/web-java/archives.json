@@ -1,0 +1,33 @@
+{
+  "archives": [
+    {
+      "kind": "rootfs",
+      "parts": [
+        {
+          "name": "rootfs.tar.gz.part-0000",
+          "sha256": "d282647208ee1c4982c0858718b21d708ee2bf1c41708e9d706a40f096379cf5",
+          "size": 74259550
+        }
+      ],
+      "sha256": "d282647208ee1c4982c0858718b21d708ee2bf1c41708e9d706a40f096379cf5",
+      "size": 74259550
+    },
+    {
+      "destination": "/data",
+      "kind": "mount",
+      "parts": [
+        {
+          "name": "mount-00.tar.gz.part-0000",
+          "sha256": "70b91ca543e51ee7f5a942a3ee927f89ca703d1d99400513cac34be49d4b1a7d",
+          "size": 19399
+        }
+      ],
+      "sha256": "70b91ca543e51ee7f5a942a3ee927f89ca703d1d99400513cac34be49d4b1a7d",
+      "size": 19399,
+      "source": "/var/lib/docker/volumes/attack-defense-lab_java-data/_data",
+      "type": "volume"
+    }
+  ],
+  "container_id": "aad40033b2a0",
+  "service_name": "web-java"
+}
