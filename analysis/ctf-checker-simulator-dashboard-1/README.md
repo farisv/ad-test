@@ -10,7 +10,8 @@ This report combines static inspection and dynamic observations. Pattern names a
 |---|---|
 | Container | ctf-checker-simulator-dashboard-1 (`f97e5190eea0`) |
 | Image | `ctf-checker-simulator-dashboard` |
-| Classification | binary/network service |
+| Classification | web |
+| Classification signals | Dynamic HTTP response detected on TCP 8080 |
 | Languages | Python (2), JavaScript (1), HTML/templates (1) |
 | Ports | 0.0.0.0:8080 → 8080/tcp, :::8080 → 8080/tcp |
 | Files inspected | 8 |
@@ -92,11 +93,25 @@ Configuration details to review:
 - Target IP: `51.158.179.106`
 - Timeout per operation: 15 seconds
 
-### Network transcripts
+### Web endpoint on TCP 8080
 
-| Port | Exit | Received bytes | Transcript |
-|---:|---:|---:|---|
-| 8080 | 0 | 0 | [nc-8080.txt](nc-8080.txt) |
+Start URL: `http://51.158.179.106:8080/`
+
+| Status | URL | Type | Bytes | Saved response |
+|---:|---|---|---:|---|
+| 200 | `http://51.158.179.106:8080/` | text/html | 3031 | [responses/0001-root-6cf20e0e5f.html](web-8080/responses/0001-root-6cf20e0e5f.html) |
+| 200 | `http://51.158.179.106:8080/app.js` | text/javascript | 2929 | [responses/0002-app.js-2f3a973452.body](web-8080/responses/0002-app.js-2f3a973452.body) |
+
+Captured screenshots:
+
+`http://51.158.179.106:8080/`
+
+![Screenshot of http://51.158.179.106:8080/](web-8080/screenshots/0001-root-6cf20e0e5f.png)
+
+`http://51.158.179.106:8080/app.js`
+
+![Screenshot of http://51.158.179.106:8080/app.js](web-8080/screenshots/0002-app.js-2f3a973452.png)
+
 
 ## Inspected source files
 

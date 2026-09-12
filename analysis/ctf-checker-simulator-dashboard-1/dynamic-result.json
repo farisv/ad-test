@@ -1,15 +1,61 @@
 {
-  "binary": [
-    {
-      "exit_code": 0,
-      "file": "nc-8080.txt",
-      "port": 8080,
-      "stderr": "Connection to 51.158.179.106 8080 port [tcp/*] succeeded!\n",
-      "stdout_bytes": 0
-    }
-  ],
+  "binary": [],
   "enabled": true,
   "errors": [],
   "ip": "51.158.179.106",
-  "web": []
+  "web": [
+    {
+      "max_depth": 10,
+      "max_pages": 500,
+      "page_limit_reached": false,
+      "pages": [
+        {
+          "body_file": "responses/0001-root-6cf20e0e5f.html",
+          "content_type": "text/html",
+          "depth": 0,
+          "error": "",
+          "headers": {
+            "Cache-Control": "no-store",
+            "Content-Length": "3031",
+            "Content-Type": "text/html; charset=utf-8",
+            "Date": "Sat, 12 Sep 2026 23:25:53 GMT",
+            "Server": "BaseHTTP/0.6 Python/3.13.15"
+          },
+          "reason": "OK",
+          "screenshot": "screenshots/0001-root-6cf20e0e5f.png",
+          "screenshot_error": "",
+          "sha256": "7573bcbf82de67036544cf168c5064a1678740221d2d168e2ca0d7cbebf97284",
+          "size": 3031,
+          "status": 200,
+          "truncated": false,
+          "url": "http://51.158.179.106:8080/"
+        },
+        {
+          "body_file": "responses/0002-app.js-2f3a973452.body",
+          "content_type": "text/javascript",
+          "depth": 1,
+          "error": "",
+          "headers": {
+            "Cache-Control": "no-store",
+            "Content-Length": "2929",
+            "Content-Type": "text/javascript; charset=utf-8",
+            "Date": "Sat, 12 Sep 2026 23:26:12 GMT",
+            "Server": "BaseHTTP/0.6 Python/3.13.15"
+          },
+          "reason": "OK",
+          "screenshot": "screenshots/0002-app.js-2f3a973452.png",
+          "screenshot_error": "",
+          "sha256": "c6fbf9e41f28a3546f4c317cfedc12fad3385a1484142ff453bb530a2eb5b84d",
+          "size": 2929,
+          "status": 200,
+          "truncated": false,
+          "url": "http://51.158.179.106:8080/app.js"
+        }
+      ],
+      "port": 8080,
+      "queued_urls": 2,
+      "screenshots_taken": 2,
+      "start_url": "http://51.158.179.106:8080/"
+    }
+  ]
 }
