@@ -1,3 +1,5 @@
+Note: Dumb quick analysis with naive deterministic checking. Only for situational awareness.
+
 # ctf-web-php-web-php-1
 
 This report combines static inspection and dynamic observations. Pattern names are neutral review cues, not conclusions.
@@ -52,19 +54,6 @@ These locations matched review-oriented source patterns. Inspect the surrounding
 | PHP user input | `source/router.php:156` | `$name = (string) ($_GET['name'] ?? 'help.txt');` |
 | File read | `source/router.php:163` | `reply(200, ['name' => $name, 'content' => file_get_contents($target)]);` |
 | SSRF-capable request | `source/router.php:163` | `reply(200, ['name' => $name, 'content' => file_get_contents($target)]);` |
-
-## Cross-file relationships to trace
-
-Compared definitions, references, and patterns across 5 source file(s). These links identify code paths worth following; they do not assert runtime data flow.
-
-### Pattern relationships
-
-| Relationship | Files | Locations |
-|---|---:|---|
-| Authorization decision appears in 2 files | 2 | source/index.html:13; source/index.html:15; source/router.php:47 |
-| Identity decisions and stored-object operations appear in separate files | 2 | Authorization decision: source/index.html:13; Authorization decision: source/index.html:15; Authorization decision: source/router.php:47; Direct object identifier: source/router.php:53; Direct object identifier: source/router.php:117; Direct object identifier: source/router.php:118; Direct object identifier: source/router.php:135; Direct object identifier: source/router.php:143; File read: source/router.php:35; File read: source/router.php:163; File write: source/router.php:27; SQL query: source/router.php:53; SQL query: source/router.php:88; SQL query: source/router.php:104; SQL query: source/router.php:117; SQL query: source/router.php:133; SQL query: source/router.php:143 |
-
-No defined symbol was referenced from another inspected file.
 
 ## Routes and entry points
 

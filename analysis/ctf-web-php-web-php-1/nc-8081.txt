@@ -1,7 +1,7 @@
 implementation: netcat
 command: nc -v -w 15 51.158.179.106 8081
 exit_code: 0
-duration_seconds: 15.184
+duration_seconds: 15.185
 stdout_bytes: 0
 stderr_bytes: 58
 
