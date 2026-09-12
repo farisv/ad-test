@@ -10,7 +10,8 @@ This report combines static inspection and dynamic observations. Pattern names a
 |---|---|
 | Container | ctf-web-java-web-java-1 (`311216cb87bc`) |
 | Image | `ctf-web-java-web-java` |
-| Classification | binary/network service |
+| Classification | web |
+| Classification signals | Web technology: JDK HttpServer |
 | Languages | Java (2) |
 | Ports | 0.0.0.0:8084 → 8084/tcp, :::8084 → 8084/tcp |
 | Files inspected | 4 |
@@ -65,11 +66,20 @@ Configuration details to review:
 - Target IP: `51.158.179.106`
 - Timeout per operation: 15 seconds
 
-### Network transcripts
+### Web endpoint on TCP 8084
 
-| Port | Exit | Received bytes | Transcript |
-|---:|---:|---:|---|
-| 8084 | 0 | 0 | [nc-8084.txt](nc-8084.txt) |
+Start URL: `http://51.158.179.106:8084/`
+
+| Status | URL | Type | Bytes | Saved response |
+|---:|---|---|---:|---|
+| 200 | `http://51.158.179.106:8084/` | application/json | 98 | [responses/0001-root-2839c9b8c3.body](web-8084/responses/0001-root-2839c9b8c3.body) |
+
+Captured screenshots:
+
+`http://51.158.179.106:8084/`
+
+![Screenshot of http://51.158.179.106:8084/](web-8084/screenshots/0001-root-2839c9b8c3.png)
+
 
 ## Inspected source files
 
