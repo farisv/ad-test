@@ -1,6 +1,6 @@
 {
   "container_id": "cdcbed8df90e084cbe0a7c01fbb7dc00752baaef422fa44ade0ca44c2c5ebecc",
   "container_name": "ctf-download-server-files-1",
-  "source_directory": "/root/code/releases",
-  "source_kind": "bind-mounted application directory"
+  "source_directory": "/root/code/download-server",
+  "source_kind": "complete compose project directory"
 }

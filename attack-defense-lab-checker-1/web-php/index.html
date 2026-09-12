@@ -1,0 +1,9 @@
+<!doctype html><meta charset="utf-8"><title>Paper Trail</title>
+<h1>Paper Trail</h1><p>Private note storage API.</p>
+<pre>POST /api/register {"username":"alice","password":"..."}
+POST /api/login    {"username":"alice","password":"..."}
+POST /api/items    Authorization: Bearer TOKEN
+                   {"title":"...","content":"..."}
+GET  /api/items/ID Authorization: Bearer TOKEN
+GET  /api/export?name=help.txt</pre>
+
