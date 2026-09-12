@@ -1,0 +1,18 @@
+{
+  "binary": [
+    {
+      "exit_code": 0,
+      "file": "nc-9002.txt",
+      "port": 9002,
+      "stderr": "Connection to 51.158.179.106 9002 port [tcp/*] succeeded!\n",
+      "stdout_bytes": 30
+    }
+  ],
+  "enabled": true,
+  "errors": [
+    "http://51.158.179.106:9002/: PATCH-TUESDAY Beacon Vault v1\n",
+    "https://51.158.179.106:9002/: <urlopen error [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:992)>"
+  ],
+  "ip": "51.158.179.106",
+  "web": []
+}

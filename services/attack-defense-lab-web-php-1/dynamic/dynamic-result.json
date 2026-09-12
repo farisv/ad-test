@@ -1,0 +1,40 @@
+{
+  "binary": [],
+  "enabled": true,
+  "errors": [],
+  "ip": "51.158.179.106",
+  "web": [
+    {
+      "max_depth": 10,
+      "max_pages": 500,
+      "page_limit_reached": false,
+      "pages": [
+        {
+          "body_file": "responses/0001-root-f3295fba17.html",
+          "content_type": "text/html",
+          "depth": 0,
+          "error": "",
+          "headers": {
+            "Connection": "close",
+            "Content-type": "text/html;charset=UTF-8",
+            "Date": "Sat, 12 Sep 2026 22:27:26 GMT",
+            "Host": "51.158.179.106:8081",
+            "X-Powered-By": "PHP/8.4.25"
+          },
+          "reason": "OK",
+          "screenshot": "screenshots/0001-root-f3295fba17.png",
+          "screenshot_error": "",
+          "sha256": "cea996dd77986614cab0ae143fdd527b59108b6c57cd6d857a5574049bf2ed61",
+          "size": 419,
+          "status": 200,
+          "truncated": false,
+          "url": "http://51.158.179.106:8081/"
+        }
+      ],
+      "port": 8081,
+      "queued_urls": 1,
+      "screenshots_taken": 1,
+      "start_url": "http://51.158.179.106:8081/"
+    }
+  ]
+}
