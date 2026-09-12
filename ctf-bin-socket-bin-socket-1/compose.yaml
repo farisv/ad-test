@@ -1,6 +1,7 @@
 name: ctf-bin-socket
 services:
   bin-socket:
+    platform: linux/amd64
     build: .
     ports:
       - "9002:9002"

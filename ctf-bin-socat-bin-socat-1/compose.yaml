@@ -1,6 +1,7 @@
 name: ctf-bin-socat
 services:
   bin-socat:
+    platform: linux/amd64
     build: .
     ports:
       - "9001:9001"

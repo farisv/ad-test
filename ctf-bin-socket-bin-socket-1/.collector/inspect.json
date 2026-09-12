@@ -17,17 +17,18 @@
       "ExposedPorts": {
         "9002/tcp": {}
       },
-      "Hostname": "07f78414b19c",
+      "Hostname": "ade4ba08f22a",
       "Image": "ctf-bin-socket-bin-socket",
       "Labels": {
-        "com.docker.compose.config-hash": "ab72b5e0eac1eac28a12924aac935dd8c1d5c30692473457e38d887933d817d7",
+        "com.docker.compose.config-hash": "ae0d487036172ffa6be803fb9c1dd8b70bd04eb6326666de0a1ad154e50ca2d6",
         "com.docker.compose.container-number": "1",
         "com.docker.compose.depends_on": "",
-        "com.docker.compose.image": "sha256:6ca4b67efb7327e27202a1046f687708ff3749c31f9e6ecb843aea616e351291",
+        "com.docker.compose.image": "sha256:898705922def6acc902070a9dc8aaa29641775d6118e19d73afd2bc026c26399",
         "com.docker.compose.oneoff": "False",
         "com.docker.compose.project": "ctf-bin-socket",
         "com.docker.compose.project.config_files": "/root/code/ctf-sim/bin-socket/compose.yaml",
         "com.docker.compose.project.working_dir": "/root/code/ctf-sim/bin-socket",
+        "com.docker.compose.replace": "bin-socket-1",
         "com.docker.compose.service": "bin-socket",
         "com.docker.compose.version": "5.5.1"
       },
@@ -38,7 +39,7 @@
       "Volumes": null,
       "WorkingDir": "/app"
     },
-    "Created": "2026-09-12T22:36:16.455619064Z",
+    "Created": "2026-09-12T22:49:38.013349142Z",
     "Driver": "overlayfs",
     "ExecIDs": null,
     "HostConfig": {
@@ -143,12 +144,12 @@
       "VolumeDriver": "",
       "VolumesFrom": null
     },
-    "HostnamePath": "/var/lib/docker/containers/07f78414b19c8bd2f52d768cc7b476eadc5fbefdd696416234e24ff28e782762/hostname",
-    "HostsPath": "/var/lib/docker/containers/07f78414b19c8bd2f52d768cc7b476eadc5fbefdd696416234e24ff28e782762/hosts",
-    "Id": "07f78414b19c8bd2f52d768cc7b476eadc5fbefdd696416234e24ff28e782762",
-    "Image": "sha256:e11a2b0300ae669a0c13ccaf355cb78793e0f016a36c0b96b98d40b0f9f96c38",
+    "HostnamePath": "/var/lib/docker/containers/ade4ba08f22a76ed482bfe2444ff9b19cbca40faa5563e8bde551b5fc970d2fe/hostname",
+    "HostsPath": "/var/lib/docker/containers/ade4ba08f22a76ed482bfe2444ff9b19cbca40faa5563e8bde551b5fc970d2fe/hosts",
+    "Id": "ade4ba08f22a76ed482bfe2444ff9b19cbca40faa5563e8bde551b5fc970d2fe",
+    "Image": "sha256:d2ca511102db76d43a03faf824eb3f346fccf139a09deddb59c0d758973d8937",
     "ImageManifestDescriptor": {
-      "digest": "sha256:6ca4b67efb7327e27202a1046f687708ff3749c31f9e6ecb843aea616e351291",
+      "digest": "sha256:898705922def6acc902070a9dc8aaa29641775d6118e19d73afd2bc026c26399",
       "mediaType": "application/vnd.oci.image.manifest.v1+json",
       "platform": {
         "architecture": "amd64",
@@ -156,7 +157,7 @@
       },
       "size": 1046
     },
-    "LogPath": "/var/lib/docker/containers/07f78414b19c8bd2f52d768cc7b476eadc5fbefdd696416234e24ff28e782762/07f78414b19c8bd2f52d768cc7b476eadc5fbefdd696416234e24ff28e782762-json.log",
+    "LogPath": "/var/lib/docker/containers/ade4ba08f22a76ed482bfe2444ff9b19cbca40faa5563e8bde551b5fc970d2fe/ade4ba08f22a76ed482bfe2444ff9b19cbca40faa5563e8bde551b5fc970d2fe-json.log",
     "MountLabel": "",
     "Mounts": [
       {
@@ -181,10 +182,10 @@
           "DNSNames": [
             "ctf-bin-socket-bin-socket-1",
             "bin-socket",
-            "07f78414b19c"
+            "ade4ba08f22a"
           ],
           "DriverOpts": null,
-          "EndpointID": "7a817f6e63010b52902350fa7a63baa0eab76bf2588c1ad18cc8a764306a1213",
+          "EndpointID": "b4f0e4a0d8bef8ea3b86c53249816345bdb090973e97dc7f48e92e41a6f18683",
           "Gateway": "172.27.0.1",
           "GlobalIPv6Address": "",
           "GlobalIPv6PrefixLen": 0,
@@ -194,7 +195,7 @@
           "IPPrefixLen": 16,
           "IPv6Gateway": "",
           "Links": null,
-          "MacAddress": "82:a2:69:c3:b5:98",
+          "MacAddress": "6a:81:19:53:48:fd",
           "NetworkID": "cbb9e64a7edb1d5f0962d8b0eb819c46c1c2d77a187cbdc0703d5da9d70fe807"
         }
       },
@@ -210,13 +211,13 @@
           }
         ]
       },
-      "SandboxID": "0bc4f64cda7ce738023a2dd4bdf8a6888822a0b7741b86eedcbae23fa11ed40d",
-      "SandboxKey": "/var/run/docker/netns/0bc4f64cda7c"
+      "SandboxID": "1bc31daec0a002aa78bf517a0478db2aa1b9439d6a64117dc8a2180796549c16",
+      "SandboxKey": "/var/run/docker/netns/1bc31daec0a0"
     },
     "Path": "/app/server",
     "Platform": "linux",
     "ProcessLabel": "",
-    "ResolvConfPath": "/var/lib/docker/containers/07f78414b19c8bd2f52d768cc7b476eadc5fbefdd696416234e24ff28e782762/resolv.conf",
+    "ResolvConfPath": "/var/lib/docker/containers/ade4ba08f22a76ed482bfe2444ff9b19cbca40faa5563e8bde551b5fc970d2fe/resolv.conf",
     "RestartCount": 0,
     "State": {
       "Dead": false,
@@ -225,10 +226,10 @@
       "FinishedAt": "0001-01-01T00:00:00Z",
       "OOMKilled": false,
       "Paused": false,
-      "Pid": 28624,
+      "Pid": 32740,
       "Restarting": false,
       "Running": true,
-      "StartedAt": "2026-09-12T22:36:16.572169185Z",
+      "StartedAt": "2026-09-12T22:49:48.556647402Z",
       "Status": "running"
     },
     "Storage": {

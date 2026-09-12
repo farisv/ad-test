@@ -1,5 +1,5 @@
 {
-  "container_id": "07f78414b19c8bd2f52d768cc7b476eadc5fbefdd696416234e24ff28e782762",
+  "container_id": "ade4ba08f22a76ed482bfe2444ff9b19cbca40faa5563e8bde551b5fc970d2fe",
   "container_name": "ctf-bin-socket-bin-socket-1",
   "source_directory": "/root/code/ctf-sim/bin-socket",
   "source_kind": "complete compose project directory"

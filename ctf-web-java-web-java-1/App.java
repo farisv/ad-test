@@ -1,44 +1,429 @@
-import com.sun.net.httpserver.*;
+import com.sun.net.httpserver.HttpExchange;
+import com.sun.net.httpserver.HttpServer;
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.net.URI;
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.security.MessageDigest;
+import java.util.ArrayList;
+import java.util.Base64;
+import java.util.HashMap;
+import java.util.HexFormat;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.Executors;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
-import java.io.*;
-import java.net.*;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.*;
-import java.security.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
 
 public class App {
-  record User(String name,String pass) {}
-  record Item(int id,String owner,String title,String content) {}
-  static final Map<String,User> users=new ConcurrentHashMap<>();
-  static final Map<Integer,Item> items=new ConcurrentHashMap<>();
-  // Intentionally vulnerable: a source-visible signing key allows token forgery.
-  static final String SIGNING_KEY="receipt-room-signing-key-2026";
-  static int nextId=1;
-  static String esc(String s){return s.replace("\\","\\\\").replace("\"","\\\"").replace("\n","\\n");}
-  static void send(HttpExchange x,int code,String body)throws IOException{x.getResponseHeaders().set("Content-Type","application/json");byte[]b=body.getBytes(StandardCharsets.UTF_8);x.sendResponseHeaders(code,b.length);x.getResponseBody().write(b);x.close();}
-  static String val(String json,String key){Matcher m=Pattern.compile("\\\""+Pattern.quote(key)+"\\\"\\s*:\\s*\\\"((?:\\\\.|[^\\\"])*)\\\"").matcher(json);if(!m.find())return"";return m.group(1).replace("\\n","\n").replace("\\\"","\"").replace("\\\\","\\");}
-  static String body(HttpExchange x)throws IOException{return new String(x.getRequestBody().readNBytes(8193),StandardCharsets.UTF_8);}
-  static String sha(String s){try{return HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(s.getBytes(StandardCharsets.UTF_8)));}catch(Exception e){throw new RuntimeException(e);}}
-  static String sig(String s){try{Mac m=Mac.getInstance("HmacSHA256");m.init(new SecretKeySpec(SIGNING_KEY.getBytes(StandardCharsets.UTF_8),"HmacSHA256"));return HexFormat.of().formatHex(m.doFinal(s.getBytes(StandardCharsets.UTF_8)));}catch(Exception e){throw new RuntimeException(e);}}
-  static String token(String user,String role){String p=Base64.getUrlEncoder().withoutPadding().encodeToString((user+":"+role).getBytes(StandardCharsets.UTF_8));return p+"."+sig(p);}
-  static String[] identity(HttpExchange x){String h=x.getRequestHeaders().getFirst("Authorization");if(h==null||!h.startsWith("Bearer "))return null;String[]t=h.substring(7).split("\\.",2);if(t.length!=2||!MessageDigest.isEqual(sig(t[0]).getBytes(),t[1].getBytes()))return null;try{return new String(Base64.getUrlDecoder().decode(t[0]),StandardCharsets.UTF_8).split(":",2);}catch(Exception e){return null;}}
-  static Map<String,String> query(URI u){Map<String,String>q=new HashMap<>();if(u.getRawQuery()==null)return q;for(String p:u.getRawQuery().split("&")){String[]kv=p.split("=",2);q.put(URLDecoder.decode(kv[0],StandardCharsets.UTF_8),kv.length>1?URLDecoder.decode(kv[1],StandardCharsets.UTF_8):"");}return q;}
-  static String b64(String s){return Base64.getEncoder().encodeToString(s.getBytes(StandardCharsets.UTF_8));}
-  static String unb64(String s){return new String(Base64.getDecoder().decode(s),StandardCharsets.UTF_8);}
-  static synchronized void persist() {try{List<String> ul=new ArrayList<>(),il=new ArrayList<>();for(User u:users.values())ul.add(b64(u.name())+"\t"+u.pass());for(Item i:items.values())il.add(i.id()+"\t"+b64(i.owner())+"\t"+b64(i.title())+"\t"+b64(i.content()));Files.write(Path.of("/data/users.db"),ul);Files.write(Path.of("/data/items.db"),il); }catch(IOException ignored){}}
-  static synchronized void restore(){try{Path u=Path.of("/data/users.db");if(Files.exists(u))for(String line:Files.readAllLines(u)){String[]p=line.split("\\t",2);if(p.length==2){String n=unb64(p[0]);users.put(n,new User(n,p[1]));}}Path f=Path.of("/data/items.db");if(Files.exists(f))for(String line:Files.readAllLines(f)){String[]p=line.split("\\t",4);if(p.length==4){int id=Integer.parseInt(p[0]);items.put(id,new Item(id,unb64(p[1]),unb64(p[2]),unb64(p[3])));nextId=Math.max(nextId,id+1);}}}catch(Exception e){System.err.println("restore failed: "+e);}}
-  static void root(HttpExchange x)throws IOException{send(x,200,"{\"service\":\"Receipt Room\",\"endpoints\":[\"/api/register\",\"/api/login\",\"/api/items\",\"/api/download\"]}");}
-  static void register(HttpExchange x)throws IOException{String b=body(x),n=val(b,"username"),p=val(b,"password");if(!n.matches("[A-Za-z0-9_]{3,48}")||p.length()<6){send(x,400,"{\"error\":\"invalid registration\"}");return;}if(users.putIfAbsent(n,new User(n,sha(p)))!=null){send(x,409,"{\"error\":\"exists\"}");return;}persist();send(x,201,"{\"status\":\"registered\"}");}
-  static void login(HttpExchange x)throws IOException{String b=body(x),n=val(b,"username"),p=val(b,"password");User u=users.get(n);if(u==null||!u.pass().equals(sha(p))){send(x,403,"{\"error\":\"bad credentials\"}");return;}send(x,200,"{\"token\":\""+token(n,"user")+"\"}");}
-  static synchronized void create(HttpExchange x,String[]id)throws IOException{String b=body(x),t=val(b,"title"),c=val(b,"content");if(t.isEmpty()||c.length()>4096){send(x,400,"{\"error\":\"invalid item\"}");return;}int n=nextId++;items.put(n,new Item(n,id[0],t,c));persist();send(x,201,"{\"id\":"+n+"}");}
-  static void getItem(HttpExchange x,int n,String[]id)throws IOException{Item i=items.get(n);if(i==null){send(x,404,"{\"error\":\"not found\"}");return;}// Intentionally vulnerable: authenticated ownership is not checked (IDOR).
-    send(x,200,"{\"id\":"+i.id()+",\"title\":\""+esc(i.title())+"\",\"content\":\""+esc(i.content())+"\"}");}
-  static void handle(HttpExchange x)throws IOException{String p=x.getRequestURI().getPath(),m=x.getRequestMethod();if(p.equals("/health")){send(x,200,"{\"status\":\"ok\"}");return;}if(p.equals("/")&&m.equals("GET")){root(x);return;}if(p.equals("/api/register")&&m.equals("POST")){register(x);return;}if(p.equals("/api/login")&&m.equals("POST")){login(x);return;}String[]id=identity(x);if(p.equals("/api/download")&&m.equals("GET")){// Intentionally vulnerable: untrusted filename escapes the receipts directory.
-      Path f=Path.of("/data/receipts").resolve(query(x.getRequestURI()).getOrDefault("name","welcome.txt"));if(!Files.isRegularFile(f)){send(x,404,"{\"error\":\"not found\"}");return;}send(x,200,"{\"content\":\""+esc(Files.readString(f))+"\"}");return;}
-    if(id==null){send(x,401,"{\"error\":\"authentication required\"}");return;}if(p.equals("/api/items")&&m.equals("POST")){create(x,id);return;}Matcher mm=Pattern.compile("/api/items/(\\d+)").matcher(p);if(m.equals("GET")&&mm.matches()){getItem(x,Integer.parseInt(mm.group(1)),id);return;}if(p.equals("/api/admin/items")&&m.equals("GET")){if(id.length<2||!id[1].equals("admin")){send(x,403,"{\"error\":\"admin only\"}");return;}StringBuilder out=new StringBuilder("[ ");for(Item i:items.values())out.append("{\"id\":").append(i.id()).append(",\"content\":\"").append(esc(i.content())).append("\"},");out.append("{}]");send(x,200,out.toString());return;}send(x,404,"{\"error\":\"not found\"}");}
-  public static void main(String[]a)throws Exception{Files.createDirectories(Path.of("/data/receipts"));restore();Path w=Path.of("/data/receipts/welcome.txt");if(!Files.exists(w))Files.writeString(w,"Receipt Room export service\n");HttpServer s=HttpServer.create(new InetSocketAddress("0.0.0.0",8084),0);s.createContext("/",App::handle);s.setExecutor(Executors.newFixedThreadPool(12));s.start();System.out.println("Receipt Room listening on 8084");}
+    record User(String name, String pass) {}
+
+    record Item(int id, String owner, String title, String content) {}
+
+    private static final Map<String, User> users = new ConcurrentHashMap<>();
+    private static final Map<Integer, Item> items = new ConcurrentHashMap<>();
+
+    // Intentionally vulnerable: a source-visible signing key allows token forgery.
+    private static final String SIGNING_KEY = "receipt-room-signing-key-2026";
+
+    private static int nextId = 1;
+
+    private static String escape(String value) {
+        return value
+            .replace("\\", "\\\\")
+            .replace("\"", "\\\"")
+            .replace("\n", "\\n");
+    }
+
+    private static void send(HttpExchange exchange, int code, String body)
+        throws IOException {
+        exchange.getResponseHeaders().set("Content-Type", "application/json");
+        byte[] bytes = body.getBytes(StandardCharsets.UTF_8);
+        exchange.sendResponseHeaders(code, bytes.length);
+        exchange.getResponseBody().write(bytes);
+        exchange.close();
+    }
+
+    private static String value(String json, String key) {
+        Pattern field = Pattern.compile(
+            "\\\"" + Pattern.quote(key) + "\\\"\\s*:\\s*\\\"((?:\\\\.|[^\\\"])*)\\\""
+        );
+        Matcher match = field.matcher(json);
+
+        if (!match.find()) {
+            return "";
+        }
+
+        return match
+            .group(1)
+            .replace("\\n", "\n")
+            .replace("\\\"", "\"")
+            .replace("\\\\", "\\");
+    }
+
+    private static String body(HttpExchange exchange) throws IOException {
+        return new String(
+            exchange.getRequestBody().readNBytes(8193),
+            StandardCharsets.UTF_8
+        );
+    }
+
+    private static String sha(String value) {
+        try {
+            byte[] digest = MessageDigest
+                .getInstance("SHA-256")
+                .digest(value.getBytes(StandardCharsets.UTF_8));
+            return HexFormat.of().formatHex(digest);
+        } catch (Exception error) {
+            throw new RuntimeException(error);
+        }
+    }
+
+    private static String signature(String value) {
+        try {
+            Mac mac = Mac.getInstance("HmacSHA256");
+            mac.init(
+                new SecretKeySpec(
+                    SIGNING_KEY.getBytes(StandardCharsets.UTF_8),
+                    "HmacSHA256"
+                )
+            );
+            return HexFormat.of().formatHex(
+                mac.doFinal(value.getBytes(StandardCharsets.UTF_8))
+            );
+        } catch (Exception error) {
+            throw new RuntimeException(error);
+        }
+    }
+
+    private static String token(String username, String role) {
+        String payload = Base64
+            .getUrlEncoder()
+            .withoutPadding()
+            .encodeToString(
+                (username + ":" + role).getBytes(StandardCharsets.UTF_8)
+            );
+        return payload + "." + signature(payload);
+    }
+
+    private static String[] identity(HttpExchange exchange) {
+        String authorization = exchange
+            .getRequestHeaders()
+            .getFirst("Authorization");
+
+        if (authorization == null || !authorization.startsWith("Bearer ")) {
+            return null;
+        }
+
+        String[] token = authorization.substring(7).split("\\.", 2);
+        if (
+            token.length != 2 ||
+            !MessageDigest.isEqual(
+                signature(token[0]).getBytes(StandardCharsets.UTF_8),
+                token[1].getBytes(StandardCharsets.UTF_8)
+            )
+        ) {
+            return null;
+        }
+
+        try {
+            return new String(
+                Base64.getUrlDecoder().decode(token[0]),
+                StandardCharsets.UTF_8
+            ).split(":", 2);
+        } catch (Exception error) {
+            return null;
+        }
+    }
+
+    private static Map<String, String> query(URI uri) {
+        Map<String, String> parameters = new HashMap<>();
+
+        if (uri.getRawQuery() == null) {
+            return parameters;
+        }
+
+        for (String pair : uri.getRawQuery().split("&")) {
+            String[] parts = pair.split("=", 2);
+            String key = URLDecoder.decode(parts[0], StandardCharsets.UTF_8);
+            String value = parts.length > 1
+                ? URLDecoder.decode(parts[1], StandardCharsets.UTF_8)
+                : "";
+            parameters.put(key, value);
+        }
+
+        return parameters;
+    }
+
+    private static String base64(String value) {
+        return Base64.getEncoder().encodeToString(
+            value.getBytes(StandardCharsets.UTF_8)
+        );
+    }
+
+    private static String unbase64(String value) {
+        return new String(
+            Base64.getDecoder().decode(value),
+            StandardCharsets.UTF_8
+        );
+    }
+
+    private static synchronized void persist() {
+        try {
+            List<String> userLines = new ArrayList<>();
+            List<String> itemLines = new ArrayList<>();
+
+            for (User user : users.values()) {
+                userLines.add(base64(user.name()) + "\t" + user.pass());
+            }
+
+            for (Item item : items.values()) {
+                itemLines.add(
+                    item.id() +
+                    "\t" + base64(item.owner()) +
+                    "\t" + base64(item.title()) +
+                    "\t" + base64(item.content())
+                );
+            }
+
+            Files.write(Path.of("/data/users.db"), userLines);
+            Files.write(Path.of("/data/items.db"), itemLines);
+        } catch (IOException ignored) {
+            // Persistence errors are reflected by missing data on the next start.
+        }
+    }
+
+    private static synchronized void restore() {
+        try {
+            Path userFile = Path.of("/data/users.db");
+            if (Files.exists(userFile)) {
+                for (String line : Files.readAllLines(userFile)) {
+                    String[] parts = line.split("\\t", 2);
+                    if (parts.length == 2) {
+                        String name = unbase64(parts[0]);
+                        users.put(name, new User(name, parts[1]));
+                    }
+                }
+            }
+
+            Path itemFile = Path.of("/data/items.db");
+            if (Files.exists(itemFile)) {
+                for (String line : Files.readAllLines(itemFile)) {
+                    String[] parts = line.split("\\t", 4);
+                    if (parts.length == 4) {
+                        int id = Integer.parseInt(parts[0]);
+                        items.put(
+                            id,
+                            new Item(
+                                id,
+                                unbase64(parts[1]),
+                                unbase64(parts[2]),
+                                unbase64(parts[3])
+                            )
+                        );
+                        nextId = Math.max(nextId, id + 1);
+                    }
+                }
+            }
+        } catch (Exception error) {
+            System.err.println("restore failed: " + error);
+        }
+    }
+
+    private static void root(HttpExchange exchange) throws IOException {
+        send(
+            exchange,
+            200,
+            "{\"service\":\"Receipt Room\",\"endpoints\":[" +
+            "\"/api/register\",\"/api/login\",\"/api/items\"," +
+            "\"/api/download\"]}"
+        );
+    }
+
+    private static void register(HttpExchange exchange) throws IOException {
+        String requestBody = body(exchange);
+        String name = value(requestBody, "username");
+        String password = value(requestBody, "password");
+
+        if (!name.matches("[A-Za-z0-9_]{3,48}") || password.length() < 6) {
+            send(exchange, 400, "{\"error\":\"invalid registration\"}");
+            return;
+        }
+
+        if (users.putIfAbsent(name, new User(name, sha(password))) != null) {
+            send(exchange, 409, "{\"error\":\"exists\"}");
+            return;
+        }
+
+        persist();
+        send(exchange, 201, "{\"status\":\"registered\"}");
+    }
+
+    private static void login(HttpExchange exchange) throws IOException {
+        String requestBody = body(exchange);
+        String name = value(requestBody, "username");
+        String password = value(requestBody, "password");
+        User user = users.get(name);
+
+        if (user == null || !user.pass().equals(sha(password))) {
+            send(exchange, 403, "{\"error\":\"bad credentials\"}");
+            return;
+        }
+
+        send(exchange, 200, "{\"token\":\"" + token(name, "user") + "\"}");
+    }
+
+    private static synchronized void create(
+        HttpExchange exchange,
+        String[] identity
+    ) throws IOException {
+        String requestBody = body(exchange);
+        String title = value(requestBody, "title");
+        String content = value(requestBody, "content");
+
+        if (title.isEmpty() || content.length() > 4096) {
+            send(exchange, 400, "{\"error\":\"invalid item\"}");
+            return;
+        }
+
+        int id = nextId++;
+        items.put(id, new Item(id, identity[0], title, content));
+        persist();
+        send(exchange, 201, "{\"id\":" + id + "}");
+    }
+
+    private static void getItem(
+        HttpExchange exchange,
+        int id,
+        String[] identity
+    ) throws IOException {
+        Item item = items.get(id);
+
+        if (item == null) {
+            send(exchange, 404, "{\"error\":\"not found\"}");
+            return;
+        }
+
+        // Intentionally vulnerable: authenticated ownership is not checked (IDOR).
+        send(
+            exchange,
+            200,
+            "{\"id\":" + item.id() +
+            ",\"title\":\"" + escape(item.title()) +
+            "\",\"content\":\"" + escape(item.content()) + "\"}"
+        );
+    }
+
+    private static void download(HttpExchange exchange) throws IOException {
+        // Intentionally vulnerable: untrusted filename escapes the receipts directory.
+        String name = query(exchange.getRequestURI())
+            .getOrDefault("name", "welcome.txt");
+        Path file = Path.of("/data/receipts").resolve(name);
+
+        if (!Files.isRegularFile(file)) {
+            send(exchange, 404, "{\"error\":\"not found\"}");
+            return;
+        }
+
+        send(
+            exchange,
+            200,
+            "{\"content\":\"" + escape(Files.readString(file)) + "\"}"
+        );
+    }
+
+    private static void adminItems(
+        HttpExchange exchange,
+        String[] identity
+    ) throws IOException {
+        if (identity.length < 2 || !identity[1].equals("admin")) {
+            send(exchange, 403, "{\"error\":\"admin only\"}");
+            return;
+        }
+
+        StringBuilder output = new StringBuilder("[ ");
+        for (Item item : items.values()) {
+            output
+                .append("{\"id\":")
+                .append(item.id())
+                .append(",\"content\":\"")
+                .append(escape(item.content()))
+                .append("\"},");
+        }
+        output.append("{}]");
+        send(exchange, 200, output.toString());
+    }
+
+    private static void handle(HttpExchange exchange) throws IOException {
+        String path = exchange.getRequestURI().getPath();
+        String method = exchange.getRequestMethod();
+
+        if (path.equals("/health")) {
+            send(exchange, 200, "{\"status\":\"ok\"}");
+            return;
+        }
+        if (path.equals("/") && method.equals("GET")) {
+            root(exchange);
+            return;
+        }
+        if (path.equals("/api/register") && method.equals("POST")) {
+            register(exchange);
+            return;
+        }
+        if (path.equals("/api/login") && method.equals("POST")) {
+            login(exchange);
+            return;
+        }
+        if (path.equals("/api/download") && method.equals("GET")) {
+            download(exchange);
+            return;
+        }
+
+        String[] identity = identity(exchange);
+        if (identity == null) {
+            send(exchange, 401, "{\"error\":\"authentication required\"}");
+            return;
+        }
+        if (path.equals("/api/items") && method.equals("POST")) {
+            create(exchange, identity);
+            return;
+        }
+
+        Matcher itemPath = Pattern.compile("/api/items/(\\d+)").matcher(path);
+        if (method.equals("GET") && itemPath.matches()) {
+            getItem(exchange, Integer.parseInt(itemPath.group(1)), identity);
+            return;
+        }
+        if (path.equals("/api/admin/items") && method.equals("GET")) {
+            adminItems(exchange, identity);
+            return;
+        }
+
+        send(exchange, 404, "{\"error\":\"not found\"}");
+    }
+
+    public static void main(String[] arguments) throws Exception {
+        Files.createDirectories(Path.of("/data/receipts"));
+        restore();
+
+        Path welcome = Path.of("/data/receipts/welcome.txt");
+        if (!Files.exists(welcome)) {
+            Files.writeString(welcome, "Receipt Room export service\n");
+        }
+
+        HttpServer server = HttpServer.create(
+            new InetSocketAddress("0.0.0.0", 8084),
+            0
+        );
+        server.createContext("/", App::handle);
+        server.setExecutor(Executors.newFixedThreadPool(12));
+        server.start();
+        System.out.println("Receipt Room listening on 8084");
+    }
 }
