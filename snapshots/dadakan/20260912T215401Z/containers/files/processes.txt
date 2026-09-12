@@ -1,2 +1,0 @@
-PID                 PPID                USER                STARTED             COMMAND
-5504                5403                nobody              Sat                 Sep 12 21:47:23 2026 python -m http.server 8090 --bind 0.0.0.0 --directory /downloads

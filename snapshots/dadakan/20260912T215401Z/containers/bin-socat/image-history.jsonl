@@ -1,9 +1,0 @@
-{"Comment":"buildkit.dockerfile.v0","CreatedAt":"2026-09-12T21:48:15Z","CreatedBy":"CMD [\"socat\" \"TCP-LISTEN:9001,reuseaddr,fork\" \"EXEC:/app/service,stderr\"]","CreatedSince":"7 minutes ago","ID":"sha256:58d6af38b1dd7411898fb4ad005f70fbf20b2c686f790871e704270f3d0dd90f","Size":"0B"}
-{"Comment":"buildkit.dockerfile.v0","CreatedAt":"2026-09-12T21:48:15Z","CreatedBy":"EXPOSE [9001/tcp]","CreatedSince":"7 minutes ago","ID":"\u003cmissing\u003e","Size":"0B"}
-{"Comment":"buildkit.dockerfile.v0","CreatedAt":"2026-09-12T21:48:15Z","CreatedBy":"USER 10001:10001","CreatedSince":"7 minutes ago","ID":"\u003cmissing\u003e","Size":"0B"}
-{"Comment":"buildkit.dockerfile.v0","CreatedAt":"2026-09-12T21:48:15Z","CreatedBy":"RUN /bin/sh -c mkdir -p /data/records \u0026\u0026 chown -R 10001:10001 /data # buildkit","CreatedSince":"7 minutes ago","ID":"\u003cmissing\u003e","Size":"12.3kB"}
-{"Comment":"buildkit.dockerfile.v0","CreatedAt":"2026-09-12T21:48:15Z","CreatedBy":"COPY /src/service ./ # buildkit","CreatedSince":"7 minutes ago","ID":"\u003cmissing\u003e","Size":"32.8kB"}
-{"Comment":"buildkit.dockerfile.v0","CreatedAt":"2026-09-12T21:48:08Z","CreatedBy":"WORKDIR /app","CreatedSince":"7 minutes ago","ID":"\u003cmissing\u003e","Size":"8.19kB"}
-{"Comment":"buildkit.dockerfile.v0","CreatedAt":"2026-09-12T21:48:07Z","CreatedBy":"RUN /bin/sh -c apk add --no-cache socat # buildkit","CreatedSince":"7 minutes ago","ID":"\u003cmissing\u003e","Size":"1.49MB"}
-{"Comment":"buildkit.dockerfile.v0","CreatedAt":"2026-06-22T19:20:09Z","CreatedBy":"CMD [\"/bin/sh\"]","CreatedSince":"2 months ago","ID":"\u003cmissing\u003e","Size":"0B"}
-{"Comment":"buildkit.dockerfile.v0","CreatedAt":"2026-06-22T19:20:09Z","CreatedBy":"ADD alpine-minirootfs-3.23.5-x86_64.tar.gz / # buildkit","CreatedSince":"2 months ago","ID":"\u003cmissing\u003e","Size":"9.07MB"}

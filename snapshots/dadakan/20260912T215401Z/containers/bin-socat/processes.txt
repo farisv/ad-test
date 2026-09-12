@@ -1,2 +1,0 @@
-PID                 PPID                USER                STARTED             COMMAND
-12164               12137               10001               Sat                 Sep 12 21:49:06 2026 socat TCP-LISTEN:9001,reuseaddr,fork EXEC:/app/service,stderr

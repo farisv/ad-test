@@ -1,6 +1,0 @@
-{"Comment":"buildkit.dockerfile.v0","CreatedAt":"2026-09-12T21:48:43Z","CreatedBy":"ENTRYPOINT [\"/service\"]","CreatedSince":"7 minutes ago","ID":"sha256:a714b72950b33526cab23bc2ad940ca267edb1b090da31039e59f67308637988","Size":"0B"}
-{"Comment":"buildkit.dockerfile.v0","CreatedAt":"2026-09-12T21:48:43Z","CreatedBy":"USER 65534:65534","CreatedSince":"7 minutes ago","ID":"\u003cmissing\u003e","Size":"0B"}
-{"Comment":"buildkit.dockerfile.v0","CreatedAt":"2026-09-12T21:48:43Z","CreatedBy":"RUN /bin/sh -c mkdir /data \u0026\u0026 chown 65534:65534 /data # buildkit","CreatedSince":"7 minutes ago","ID":"\u003cmissing\u003e","Size":"8.19kB"}
-{"Comment":"buildkit.dockerfile.v0","CreatedAt":"2026-09-12T21:48:43Z","CreatedBy":"COPY /service /service # buildkit","CreatedSince":"7 minutes ago","ID":"\u003cmissing\u003e","Size":"5.88MB"}
-{"Comment":"buildkit.dockerfile.v0","CreatedAt":"2026-06-22T19:20:09Z","CreatedBy":"CMD [\"/bin/sh\"]","CreatedSince":"2 months ago","ID":"\u003cmissing\u003e","Size":"0B"}
-{"Comment":"buildkit.dockerfile.v0","CreatedAt":"2026-06-22T19:20:09Z","CreatedBy":"ADD alpine-minirootfs-3.23.5-x86_64.tar.gz / # buildkit","CreatedSince":"2 months ago","ID":"\u003cmissing\u003e","Size":"9.07MB"}
