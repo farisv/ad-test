@@ -1,0 +1,6 @@
+{
+  "container_id": "e32c7b2ddbc86f150165b24c2dd0392603f907a3bd5ba436f1086f9df3755e42",
+  "container_name": "attack-defense-lab-bin-socat-1",
+  "source_directory": "/root/code/ctf-sim/bin-socat",
+  "source_kind": "compose build context"
+}

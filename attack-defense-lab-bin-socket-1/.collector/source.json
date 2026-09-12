@@ -1,0 +1,6 @@
+{
+  "container_id": "fd36ccb369310392484f9588d6985ee9fada5232f2b54e5f576fa34eb3b47aee",
+  "container_name": "attack-defense-lab-bin-socket-1",
+  "source_directory": "/root/code/ctf-sim/bin-socket",
+  "source_kind": "compose build context"
+}

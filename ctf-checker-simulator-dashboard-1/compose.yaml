@@ -1,0 +1,22 @@
+name: ctf-checker-simulator
+services:
+  dashboard:
+    build: .
+    restart: unless-stopped
+    environment:
+      TARGET_HOST: ${TARGET_HOST:-51.158.179.106}
+      CHECK_INTERVAL: ${CHECK_INTERVAL:-60}
+      WEB_PORT: 8080
+      DB_PATH: /data/simulator.db
+    ports:
+      - "${WEB_PORT:-8080}:8080"
+    volumes:
+      - simulator-data:/data
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    pids_limit: 128
+    mem_limit: 256m
+
+volumes:
+  simulator-data:
+

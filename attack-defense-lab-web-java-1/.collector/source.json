@@ -1,0 +1,6 @@
+{
+  "container_id": "aad40033b2a03344681c3001d8913b4c2b5302fdae8b984bb4967e39a2e96cd5",
+  "container_name": "attack-defense-lab-web-java-1",
+  "source_directory": "/root/code/ctf-sim/web-java",
+  "source_kind": "compose build context"
+}

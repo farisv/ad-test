@@ -1,0 +1,6 @@
+{
+  "container_id": "f97e5190eea0ea46beb6813d57a5f4bc11696b26a96905d1104a4ca01b063dc8",
+  "container_name": "ctf-checker-simulator-dashboard-1",
+  "source_directory": "/root/code/checker-simulator",
+  "source_kind": "compose build context"
+}

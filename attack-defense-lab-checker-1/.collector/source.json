@@ -1,0 +1,6 @@
+{
+  "container_id": "e1e7b694e161564baf9d27b834f60ef2588e3bae2d0862f6e5e10cec89ee7cb2",
+  "container_name": "attack-defense-lab-checker-1",
+  "source_directory": "/root/code/ctf-sim/checker",
+  "source_kind": "compose build context"
+}

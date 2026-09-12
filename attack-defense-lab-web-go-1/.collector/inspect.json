@@ -1,0 +1,247 @@
+[
+  {
+    "AppArmorProfile": "docker-default",
+    "Args": [],
+    "Config": {
+      "AttachStderr": true,
+      "AttachStdin": false,
+      "AttachStdout": true,
+      "Cmd": null,
+      "Domainname": "",
+      "Entrypoint": [
+        "/service"
+      ],
+      "Env": [
+        "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      ],
+      "ExposedPorts": {
+        "8082/tcp": {}
+      },
+      "Hostname": "5046a4fcd644",
+      "Image": "attack-defense-lab-web-go",
+      "Labels": {
+        "com.docker.compose.config-hash": "bcd811bba8b0a501bc279ed2be83513d281e1d9fd5b570c45ea77cbed0184f12",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.depends_on": "",
+        "com.docker.compose.image": "sha256:74e0967ba075d9e8f549f33e5e076fae5bc5c671358e8552f870a21bb291305c",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "attack-defense-lab",
+        "com.docker.compose.project.config_files": "/root/code/ctf-sim/compose.yaml",
+        "com.docker.compose.project.working_dir": "/root/code/ctf-sim",
+        "com.docker.compose.replace": "web-go-1",
+        "com.docker.compose.service": "web-go",
+        "com.docker.compose.version": "5.5.1"
+      },
+      "OpenStdin": false,
+      "StdinOnce": false,
+      "Tty": false,
+      "User": "65534:65534",
+      "Volumes": null,
+      "WorkingDir": "/"
+    },
+    "Created": "2026-09-12T21:48:44.992181126Z",
+    "Driver": "overlayfs",
+    "ExecIDs": null,
+    "HostConfig": {
+      "AutoRemove": false,
+      "Binds": [
+        "attack-defense-lab_go-data:/data:rw"
+      ],
+      "BlkioDeviceReadBps": null,
+      "BlkioDeviceReadIOps": null,
+      "BlkioDeviceWriteBps": null,
+      "BlkioDeviceWriteIOps": null,
+      "BlkioWeight": 0,
+      "BlkioWeightDevice": null,
+      "CapAdd": null,
+      "CapDrop": [
+        "ALL"
+      ],
+      "Cgroup": "",
+      "CgroupParent": "",
+      "CgroupnsMode": "private",
+      "ConsoleSize": [
+        0,
+        0
+      ],
+      "ContainerIDFile": "",
+      "CpuCount": 0,
+      "CpuPercent": 0,
+      "CpuPeriod": 0,
+      "CpuQuota": 0,
+      "CpuRealtimePeriod": 0,
+      "CpuRealtimeRuntime": 0,
+      "CpuShares": 0,
+      "CpusetCpus": "",
+      "CpusetMems": "",
+      "DeviceCgroupRules": null,
+      "DeviceRequests": null,
+      "Devices": null,
+      "Dns": null,
+      "DnsOptions": null,
+      "DnsSearch": null,
+      "ExtraHosts": [],
+      "GroupAdd": null,
+      "IOMaximumBandwidth": 0,
+      "IOMaximumIOps": 0,
+      "IpcMode": "private",
+      "Isolation": "",
+      "Links": null,
+      "LogConfig": {
+        "Config": {},
+        "Type": "json-file"
+      },
+      "MaskedPaths": [
+        "/proc/acpi",
+        "/proc/asound",
+        "/proc/interrupts",
+        "/proc/kcore",
+        "/proc/keys",
+        "/proc/latency_stats",
+        "/proc/sched_debug",
+        "/proc/scsi",
+        "/proc/timer_list",
+        "/proc/timer_stats",
+        "/sys/devices/virtual/powercap",
+        "/sys/firmware"
+      ],
+      "Memory": 268435456,
+      "MemoryReservation": 0,
+      "MemorySwap": 536870912,
+      "MemorySwappiness": null,
+      "NanoCpus": 0,
+      "NetworkMode": "attack-defense-lab_arena",
+      "OomKillDisable": null,
+      "OomScoreAdj": 0,
+      "PidMode": "",
+      "PidsLimit": 128,
+      "PortBindings": {
+        "8082/tcp": [
+          {
+            "HostIp": "",
+            "HostPort": "8082"
+          }
+        ]
+      },
+      "Privileged": false,
+      "PublishAllPorts": false,
+      "ReadonlyPaths": [
+        "/proc/bus",
+        "/proc/fs",
+        "/proc/irq",
+        "/proc/sys",
+        "/proc/sysrq-trigger"
+      ],
+      "ReadonlyRootfs": false,
+      "RestartPolicy": {
+        "MaximumRetryCount": 0,
+        "Name": "unless-stopped"
+      },
+      "Runtime": "runc",
+      "SecurityOpt": [
+        "no-new-privileges:true"
+      ],
+      "ShmSize": 67108864,
+      "UTSMode": "",
+      "Ulimits": null,
+      "UsernsMode": "",
+      "VolumeDriver": "",
+      "VolumesFrom": null
+    },
+    "HostnamePath": "/var/lib/docker/containers/5046a4fcd6447bfe202ddf372a7bf8356c7507be3254143bfc46a8908a4413c2/hostname",
+    "HostsPath": "/var/lib/docker/containers/5046a4fcd6447bfe202ddf372a7bf8356c7507be3254143bfc46a8908a4413c2/hosts",
+    "Id": "5046a4fcd6447bfe202ddf372a7bf8356c7507be3254143bfc46a8908a4413c2",
+    "Image": "sha256:a714b72950b33526cab23bc2ad940ca267edb1b090da31039e59f67308637988",
+    "ImageManifestDescriptor": {
+      "digest": "sha256:74e0967ba075d9e8f549f33e5e076fae5bc5c671358e8552f870a21bb291305c",
+      "mediaType": "application/vnd.oci.image.manifest.v1+json",
+      "platform": {
+        "architecture": "amd64",
+        "os": "linux"
+      },
+      "size": 860
+    },
+    "LogPath": "/var/lib/docker/containers/5046a4fcd6447bfe202ddf372a7bf8356c7507be3254143bfc46a8908a4413c2/5046a4fcd6447bfe202ddf372a7bf8356c7507be3254143bfc46a8908a4413c2-json.log",
+    "MountLabel": "",
+    "Mounts": [
+      {
+        "Destination": "/data",
+        "Driver": "local",
+        "Mode": "rw",
+        "Name": "attack-defense-lab_go-data",
+        "Propagation": "",
+        "RW": true,
+        "Source": "/var/lib/docker/volumes/attack-defense-lab_go-data/_data",
+        "Type": "volume"
+      }
+    ],
+    "Name": "/attack-defense-lab-web-go-1",
+    "NetworkSettings": {
+      "Networks": {
+        "attack-defense-lab_arena": {
+          "Aliases": [
+            "attack-defense-lab-web-go-1",
+            "web-go"
+          ],
+          "DNSNames": [
+            "attack-defense-lab-web-go-1",
+            "web-go",
+            "5046a4fcd644"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "5a43f21335de48ec618f7780b5f5d62f159f593b41e27b71d3a649f7c16689d1",
+          "Gateway": "172.18.0.1",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "172.18.0.7",
+          "IPPrefixLen": 16,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "c6:09:b3:95:a1:91",
+          "NetworkID": "299921a016417817e2b697c07e058b527007bd0906265af7633094c354ba7019"
+        }
+      },
+      "Ports": {
+        "8082/tcp": [
+          {
+            "HostIp": "0.0.0.0",
+            "HostPort": "8082"
+          },
+          {
+            "HostIp": "::",
+            "HostPort": "8082"
+          }
+        ]
+      },
+      "SandboxID": "667023aca89cfb8c66b4b01e77ce234d54fbe89c279c48bca96502e158f804a4",
+      "SandboxKey": "/var/run/docker/netns/667023aca89c"
+    },
+    "Path": "/service",
+    "Platform": "linux",
+    "ProcessLabel": "",
+    "ResolvConfPath": "/var/lib/docker/containers/5046a4fcd6447bfe202ddf372a7bf8356c7507be3254143bfc46a8908a4413c2/resolv.conf",
+    "RestartCount": 0,
+    "State": {
+      "Dead": false,
+      "Error": "",
+      "ExitCode": 0,
+      "FinishedAt": "0001-01-01T00:00:00Z",
+      "OOMKilled": false,
+      "Paused": false,
+      "Pid": 12532,
+      "Restarting": false,
+      "Running": true,
+      "StartedAt": "2026-09-12T21:49:07.729723012Z",
+      "Status": "running"
+    },
+    "Storage": {
+      "RootFS": {
+        "Snapshot": {
+          "Name": "overlayfs"
+        }
+      }
+    }
+  }
+]
