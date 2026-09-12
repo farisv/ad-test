@@ -11,6 +11,7 @@ This report combines static inspection and dynamic observations. Pattern names a
 | Container | ctf-checker-checker-1 (`4bf618b5fa1c`) |
 | Image | `ctf-checker-checker` |
 | Classification | background/utility service |
+| Classification signals | No static web-specific signal |
 | Languages | Python (2) |
 | Ports | None detected |
 | Files inspected | 4 |
