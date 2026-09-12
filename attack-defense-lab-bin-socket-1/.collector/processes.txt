@@ -1,2 +1,0 @@
-PID                 PPID                USER                STARTED             COMMAND
-12265               12241               10002               Sat                 Sep 12 21:49:06 2026 /app/server
