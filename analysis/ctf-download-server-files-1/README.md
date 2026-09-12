@@ -11,6 +11,7 @@ This report combines static inspection and dynamic observations. Pattern names a
 | Container | ctf-download-server-files-1 (`cdcbed8df90e`) |
 | Image | `python:3.13-alpine` |
 | Classification | web |
+| Classification signals | Dynamic HTTP response detected on TCP 8090 |
 | Languages | Python (1) |
 | Ports | 0.0.0.0:8090 → 8090/tcp, :::8090 → 8090/tcp |
 | Files inspected | 1 |
