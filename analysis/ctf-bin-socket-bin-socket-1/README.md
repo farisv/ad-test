@@ -11,6 +11,7 @@ This report combines static inspection and dynamic observations. Pattern names a
 | Container | ctf-bin-socket-bin-socket-1 (`ade4ba08f22a`) |
 | Image | `ctf-bin-socket-bin-socket` |
 | Classification | binary/network service |
+| Classification signals | No static web-specific signal |
 | Languages | native C/C++/other (1) |
 | Ports | 0.0.0.0:9002 → 9002/tcp, :::9002 → 9002/tcp |
 | Files inspected | 4 |
@@ -59,6 +60,11 @@ Configuration details to review:
 | Port | Exit | Received bytes | Transcript |
 |---:|---:|---:|---|
 | 9002 | 0 | 30 | [nc-9002.txt](nc-9002.txt) |
+
+### Probe notes
+
+- http://51.158.179.106:9002/: PATCH-TUESDAY Beacon Vault v1 
+- https://51.158.179.106:9002/: <urlopen error [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:992)>
 
 ## Inspected source files
 
